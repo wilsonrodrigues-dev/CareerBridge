@@ -1,0 +1,270 @@
+ /* TABLET VIEW (≤ 992px) */
+
+ @media (max-width: 992px) {
+
+     /* NAVIGATION */
+     .nav-links {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        background: white;
+    
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+    
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-15px);
+        transition: all 0.3s ease;
+      }
+    
+      .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    
+      /* Buttons go below links */
+      .nav-buttons {
+        flex-direction: column;
+        margin-left: 0;
+        gap: 15px;
+        width: 60%;
+        align-items: center;
+      }
+    
+      .nav-buttons .btn {
+        width: 80%;
+        text-align: center;
+      }
+
+     .hamburger {
+         display: flex;
+     }
+
+     .hamburger.active span:nth-child(1) {
+         transform: rotate(45deg) translateY(11px);
+     }
+
+     .hamburger.active span:nth-child(2) {
+         opacity: 0;
+     }
+
+     .hamburger.active span:nth-child(3) {
+         transform: rotate(-45deg) translateY(-11px);
+     }
+
+     /* HERO */
+     .hero-wrapper {
+         flex-direction: column;
+         gap: 60px;
+         text-align: center;
+     }
+
+     .hero-title {
+         font-size: 42px;
+     }
+
+     .hero-description {
+         margin-left: auto;
+         margin-right: auto;
+     }
+
+     .hero-buttons {
+         justify-content: center;
+     }
+
+     /* ABOUT */
+     .about-wrapper {
+         flex-direction: column;
+         gap: 60px;
+     }
+
+     /* STATS */
+     .stats-grid {
+         grid-template-columns: repeat(2, 1fr);
+     }
+
+     /* PLACED */
+     .placed-header {
+         flex-direction: column;
+         align-items: flex-start;
+         gap: 20px;
+     }
+
+     .placed-grid {
+         grid-template-columns: repeat(2, 1fr);
+     }
+
+     /* PROCESS */
+     .process-line {
+         display: none;
+     }
+
+     .process-grid {
+         grid-template-columns: 1fr;
+     }
+
+     /* AI */
+     .ai-wrapper {
+         flex-direction: column;
+         gap: 60px;
+         text-align: center;
+     }
+
+     .ai-feature {
+         justify-content: center;
+     }
+
+     .ai-visual{
+        width: 200px;
+        height: 200px;
+     }
+
+     /* DRIVES */
+     /* .drives-header {
+         flex-direction: column;
+         align-items: flex-start;
+         gap: 20px;
+     }
+
+     .drives-grid {
+         grid-template-columns: repeat(2, 1fr);
+     } */
+
+     /* FOOTER */
+     .footer-grid {
+         grid-template-columns: repeat(2, 1fr);
+     }
+
+     .footer-bottom {
+         flex-direction: column;
+         gap: 15px;
+         text-align: center;
+     }
+
+ }
+
+ /* MOBILE VIEW (≤ 600px) */
+
+ @media (max-width: 600px) {
+
+     section {
+         padding: 70px 0;
+     }
+
+     /* HERO */
+     .hero-section {
+         padding: 50px 0 80px;
+     }
+
+     .hero-title {
+         font-size: 30px;
+     }
+
+     .hero-description {
+         font-size: 15px;
+     }
+
+     .hero-buttons {
+         flex-direction: column;
+         gap: 15px;
+     }
+
+     .btn-large {
+         width: 100%;
+     }
+
+     /* ANALYTICS GRID */
+     .analytics-grid {
+         grid-template-columns: 1fr;
+     }
+
+     /* ABOUT */
+     .about-section {
+         padding: 50px 0;
+     }
+
+     .about-content h2 {
+         font-size: 24px;
+     }
+
+     .about-quote {
+         font-size: 15px;
+     }
+
+     .tpo-card {
+         flex-direction: column;
+         text-align: center;
+     }
+
+     /* STATS */
+     .stats-grid {
+         grid-template-columns: 1fr;
+     }
+
+     .stat-number {
+         font-size: 28px;
+     }
+
+     /* RECRUITERS */
+     .recruiters-logos {
+         gap: 30px;
+     }
+
+     /* PLACED */
+     .placed-grid {
+         grid-template-columns: 1fr;
+     }
+
+     .placed-image {
+         height: 220px;
+     }
+
+     /* PROCESS */
+     .process-card {
+         padding: 30px;
+     }
+
+     /* AI */
+     .ai-left h2 {
+         font-size: 26px;
+     }
+
+     .ai-feature {
+         flex-direction: column;
+         align-items: center;
+         text-align: center;
+     }
+
+     /* DRIVES */
+     /* .drives-grid {
+         grid-template-columns: 1fr;
+     }
+
+     .drive-footer {
+         flex-direction: column;
+         gap: 10px;
+         align-items: flex-start;
+     } */
+
+     /* TESTIMONIAL */
+     .testimonial-text {
+         font-size: 18px;
+     }
+
+     /* FOOTER */
+     .footer-grid {
+         grid-template-columns: 1fr;
+         gap: 40px;
+     }
+
+     .footer-bottom-links {
+         flex-direction: column;
+         gap: 10px;
+     }
+
+ }

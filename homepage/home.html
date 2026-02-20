@@ -1,748 +1,695 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>PlacementPro Institutional Landing Page</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <!-- <style>
-        .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .hero-gradient {
-            background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
-        }
-
-        .cta-gradient {
-            background: linear-gradient(90deg, #1e448a 0%, #10B981 100%);
-        }
-
-        .recruiter-logo {
-            filter: grayscale(100%);
-            transition: all 0.3s ease;
-        }
-
-        .recruiter-logo:hover {
-            filter: grayscale(0%);
-            transform: scale(1.05);
-        }
-    </style> -->
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>PlacementPro Institutional Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
 </head>
 
 <body class="main-body">
 
-    <!-- Section: Header / Navigation -->
-    <header class="header">
-        <div class="container">
-            <div class="nav-wrapper">
+  <!-- Section: Header / Navigation -->
+  <header class="header">
+    <div class="container">
+      <div class="nav-wrapper">
 
-                <div class="logo">
-                    <span class="material-symbols-outlined logo-icon">hub</span>
-                    <span class="logo-text">PlacementPro</span>
-                </div>
-
-                <nav class="nav-links">
-                    <a href="#">About</a>
-                    <a href="#">Statistics</a>
-                    <a href="#">Active Drives</a>
-                    <a href="#">Success Stories</a>
-                </nav>
-
-                <div class="nav-buttons">
-                    <button class="btn btn-light">Student Login</button>
-                    <button class="btn btn-primary">Recruiter Portal</button>
-                </div>
-
-            </div>
+        <div class="logo">
+          <span class="material-symbols-outlined logo-icon">hub</span>
+          <span class="logo-text">PlacementPro</span>
         </div>
-    </header>
 
-    <!-- Section 1: Hero -->
-    <section class="hero-section">
-        <div class="container hero-wrapper">
+        <nav class="nav-links">
+          <a href="#About">About</a>
+          <a href="#Statistics">Statistics</a>
+          <a href="#Active">Active Drives</a>
+          <a href="#Success">Success Stories</a>
 
-            <div class="hero-left">
+          <div class="nav-buttons">
+            <button class="btn btn-light">Student Login</button>
+            <button class="btn btn-primary">Recruiter Portal</button>
+          </div>
+        </nav>
 
-                <div class="hero-badges">
-                    <span class="badge badge-primary">
-                        NAAC Accredited
-                    </span>
-                    <span class="badge badge-gray">
-                        Estd. 2001
-                    </span>
-                </div>
-
-                <h1 class="hero-title">
-                    Empowering Careers Through
-                    <span class="highlight">Smart Placement</span>
-                    Automation
-                </h1>
-
-                <p class="hero-description">
-                    Streamline campus recruitment with real-time analytics, automated student tracking, and
-                    industry-standard matching algorithms.
-                </p>
-
-                <div class="hero-buttons">
-                    <button class="btn btn-large btn-primary hero-btn-primary">
-                        Get Started Today
-                    </button>
-                    <button class="btn btn-large btn-outline hero-btn-secondary">
-                        View Placement Reports
-                    </button>
-                </div>
-
-            </div>
-
-            <div class="hero-right">
-
-                <div class="analytics-card glass-card">
-
-                    <div class="analytics-header">
-                        <h3>Placement Analytics</h3>
-                        <span class="material-symbols-outlined more-icon">more_horiz</span>
-                    </div>
-
-                    <div class="analytics-grid">
-
-                        <div class="analytics-box primary-box">
-                            <p class="box-label">Applications</p>
-                            <p class="box-value primary-text">1,240</p>
-                            <div class="progress-bar">
-                                <div class="progress-fill primary-fill" style="width:70%"></div>
-                            </div>
-                        </div>
-
-                        <div class="analytics-box secondary-box">
-                            <p class="box-label">Shortlisted</p>
-                            <p class="box-value secondary-text">428</p>
-                            <div class="progress-bar">
-                                <div class="progress-fill secondary-fill" style="width:45%"></div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="student-list">
-
-                        <div class="student-item">
-                            <div class="avatar"></div>
-                            <div class="student-info">
-                                <p class="student-name">Rahul Mehta</p>
-                                <p class="student-role">Software Intern - Adobe</p>
-                            </div>
-                            <span class="status-badge placed">PLACED</span>
-                        </div>
-
-                        <div class="student-item">
-                            <div class="avatar"></div>
-                            <div class="student-info">
-                                <p class="student-name">Sanya Gupta</p>
-                                <p class="student-role">Cloud Analyst - AWS</p>
-                            </div>
-                            <span class="status-badge offered">OFFERED</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Decorative background elements -->
-                <div class="decor decor-primary"></div>
-                <div class="decor decor-secondary"></div>
-
-            </div>
-
+        <!-- Hamburger -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-    </section>
 
-    <!-- Section 2: Credibility -->
-    <section class="about-section">
-        <div class="container">
-          <div class="about-wrapper">
-      
-            <div class="about-image">
-              <img 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkI8ILyxwxahg7hq8sG8f6M9KGpucjCLoRwvxljMsUss56EG4gdcec7SP_B65sKYl-8dK0NlsePdVamFnYJMJ6-EpVemOk8NIZ29stxbjH30yyUemLGQz5yNNamxhUWsgg4gdBcy0RGuhMeKa6zXDgFWy-0FXBFJWf7DB1ow5P3xIQ3cx_eYIPG5gKxapHiStizNghqv04d-5TqxjveD9Kj7gIpG4eXKQ-Aw6ze8eJ6RS1TiL_aXHzfJR4j2yi43lw6E5U7uRzg9HR"
-                alt="Institutional Campus Main Entrance"
-              />
-            </div>
-      
-            <div class="about-content">
-      
-              <h2>About the Placement Cell</h2>
-      
-              <p class="about-quote">
-                "Our mission is to nurture the inherent potential of our students and provide them with the
-                best industrial opportunities, bridging the talent-expectation gap in the professional
-                world."
-              </p>
-      
-              <div class="tpo-card">
-      
-                <div class="tpo-image">
-                  <img 
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqPEds_Fbf2R_2byG0pzwT-UMEg9gZPVsq96AhA5rU0fIti1sTaBPZGlnznaPX9mYFBhAbE1lMKc7GsWXgMfzhb5RNEseLoZfDt50ZGNB0PFh7QOs63RlmoZfIgr7u1e4SJHGyzX1PckEypIZ-1LsVCe_MKsuEVhimq_lYHZq63tiGPi_TwMSrtTooQ0zXBX8h8mSd7l6Dp8iDAxLg1P_eVlX0xXTWu4sfHhzLNc2GfZSIKg0c_yhPb6vkDGdgsY_GNUV-AWj_08Lz"
-                    alt="Mr. Rajesh Sharma - Placement Officer"
-                  />
-                </div>
-      
-                <div class="tpo-details">
-                  <h4>Mr. Rajesh Sharma</h4>
-                  <p class="tpo-role">Training & Placement Officer (TPO)</p>
-                  <p class="tpo-experience">15+ years of Industry-Academia experience</p>
-                </div>
-      
-              </div>
-      
-            </div>
-      
-          </div>
-        </div>
-      </section>
-    <!-- Section 3: Stats -->
-    <section class="stats-section">
-        <div class="container">
-          <div class="stats-grid">
-      
-            <div class="stat-card">
-              <p class="stat-number primary-text">450+</p>
-              <p class="stat-label">Students Placed</p>
-              <p class="stat-trend secondary-text">
-                <span class="material-symbols-outlined trend-icon">trending_up</span>
-                +12% YoY
-              </p>
-            </div>
-      
-            <div class="stat-card">
-              <p class="stat-number primary-text">₹24 LPA</p>
-              <p class="stat-label">Highest Package</p>
-              <p class="stat-trend secondary-text">
-                <span class="material-symbols-outlined trend-icon">trending_up</span>
-                New Record
-              </p>
-            </div>
-      
-            <div class="stat-card">
-              <p class="stat-number primary-text">120+</p>
-              <p class="stat-label">Companies Visited</p>
-              <p class="stat-trend secondary-text">
-                <span class="material-symbols-outlined trend-icon">trending_up</span>
-                20 New Partners
-              </p>
-            </div>
-      
-            <div class="stat-card">
-              <p class="stat-number primary-text">92%</p>
-              <p class="stat-label">Placement Rate</p>
-              <p class="stat-trend secondary-text">
-                <span class="material-symbols-outlined trend-icon">check_circle</span>
-                Industry Leading
-              </p>
-            </div>
-      
-          </div>
-        </div>
-      </section>
-    <!-- Section 4: Recruiters -->
-    <section class="recruiters-section">
-        <div class="container">
-      
-          <p class="recruiters-title">
-            Top Industry Recruiters
-          </p>
-      
-          <div class="recruiters-logos">
-      
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqiD2kcmqEld88ySfTx1pQoxLUups1p5h_RrWHeRV96dLy7e1-JjWemmIskGmRZQQ9W5xx0jalEvEeH61OS2JeiIau31v6uArSJbudfn_ChBhl6HH-qxLe8bseSUDyu0SFnq4wPcpMlttc59V63kZKGpm-Y5OZHiQYGkuDgXX7hcFL3FvaIIGi_F_R0Fpl8fjTcSqPXD5--i9sH7UGvNo4NBEfnLCAxa-ktd-vgPygyKn18tqpI7WqBxM60eRYLd-4Z3mFeMJQB2km"
-              alt="TCS Logo"
-              class="recruiter-logo"
-            />
-      
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHGNevAoX0WqwkUV9UNbGyXdhvTbSl7mD_QM7yyfrOhdfI4d5XDYKxFL_aN12FIhkppyGA_2AzHw4wQPwDT6w4Lagx6jEpClLd3M5kGYwPzvtp5fXuw4iQyVa0kIqaOfcr3LO9pkGJUqehRDfrS6DjELUvBc8MXDPnMSLbtxNOYTS83o6wHVHliM6DjY3kucZXn8nU_qfSMDa-MiYuFf6uAtf0EFz8DQNoEdyAIhTUl0k5DW6KvzmJebbCWLet-C1U1NJ8NdvFlCsS"
-              alt="Infosys Logo"
-              class="recruiter-logo small-logo"
-            />
-      
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKsBCYm8Pj8AQu_8Mo6MMi5626_y2yWzaKalR0wPvLyFhDL_-WhAOov3yTE6krvFNlBSHFllESnIhlVMD50dzoh2tw6_dC32D3YS8ut1cLYZw_66buAMV8hPRnrJJSgewBAsHWwjswprNS58tswLGmi6eS6y356IQSaXMCDaceunG_nCmcf6ellN5hOtvZOCidBOvnyTqZHPW_PEBIsoj7nd-xnkwEF4Y7n8wkOyhFM2Ecom3aUa4WHmlVQO69to9RQ2vqPemjLmLI"
-              alt="Wipro Logo"
-              class="recruiter-logo"
-            />
-      
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxCIoMlRcIiUW7Ofoy3Iq3EYTTG6qYU55fq2SxWfnt1UGJddAcjLsMP2PzYG1XbHI4MDc0DbaXr_FQqmZqRDcYHjFiUMdDUFnXHss-3mHCgtKG8VbBXRMef49YavyQJ1MkhwMtlXa7wGwgEv_a8QtqfcFZgiMTLedrf2g7nip3TgEj5jiRnztySGP3Z0VA1r1cm2dAuowcleKoTfWb5EH9g_YTk8Z6kzkqUzl5IcraRoe88o0wr1TrDW-K2SCYfzdoOeY8B6dE2z_e"
-              alt="Accenture Logo"
-              class="recruiter-logo small-logo"
-            />
-      
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJTbfWPY9hhEMfegqfqS6BOFt1FicFhVq1Qeyvzulp3T3kgmxrHrenv3wFa4jkyBoMx3tLaW7Xw65hgXvPSMN8iUO0-6qHfehaaSH1HU-rhafTIxSGvPc4nWiPDreQtf-1tePE-14dEDe7vpfpAntuR0qAHKbzHwIqJNFcpOLgHZw-qq4CkQbQbsSL1GauSkCBm_4CvjhlYTYrY84l09tt9Q0ABFD5Cj5KiVYpDZ-bLiuNLK2z45JxL1fK3RFv4_QW2lTBnKTqddB8"
-              alt="Google Logo"
-              class="recruiter-logo"
-            />
-      
-          </div>
-        </div>
-      </section>
-    <!-- Section 5: Success Stories -->
-    <section class="placed-section">
-        <div class="container">
-      
-          <div class="placed-header">
-            <div>
-              <h2>Recently Placed Students</h2>
-              <p>Celebrating the success of our bright minds across global tech giants.</p>
-            </div>
-      
-            <button class="hall-btn">
-              View Hall of Fame
-              <span class="material-symbols-outlined arrow-icon">arrow_forward</span>
-            </button>
-          </div>
-      
-          <div class="placed-grid">
-      
-            <!-- Student 1 -->
-            <div class="placed-card">
-              <div class="placed-image">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0nq3ylruwwJqMm82isli9oYZqjIjatPQkPflqfvmarJmgW7Re0Ly6-1zlutQbgoU47yCFeDaPOViB-7D2ok8IxNQGarmT_urxANJK1_YgwnH5I4IN8Rv6XPzEQQLVot_LsBOrknI814KTdWaEaCgOsIFkzkaTNVAyNa1FhoAQ54MiLW1NZ4S_dnhwciRUnXt1nU6f0mOTY4OTmWr2qkRkO3L0utJq8SywZ8VN-FOPmV_eCPE3g6WMD7b-U9rXdWhJ9hQqW6iB9iN1" alt="Aditi Verma">
-                <div class="salary-tag">₹18 LPA</div>
-              </div>
-              <h4>Aditi Verma</h4>
-              <p class="student-role">Data Analyst at Accenture</p>
-              <div class="student-meta">
-                <span class="dot"></span>
-                <span>Class of 2023</span>
-              </div>
-            </div>
-      
-            <!-- Student 2 -->
-            <div class="placed-card">
-              <div class="placed-image">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeUukkj9aWiOXQA9wFFEjB0UMzlpITYv0gcdtauQSkMD31v0qSO3ZcEBlY8srKA3xtx_dMSM-cEs-uK83IDck5EufTSU_XySqEQW1bNs9Nx3JryQ4dbPrMvg75scl0MWxsZQTOQjE0rutlOUoYxqvlHiv7A9ISIAqQHbys7kZ9iP5mSgTqX9AJ0r7zZojNoemaC3jl-bIs9fi96735DpmAQ7TFF8m3sH_4THZlOD7jX0jROlZySByHCUDAGexXgkdElylEiNtjQeO1" alt="Rohan Das">
-                <div class="salary-tag">₹24 LPA</div>
-              </div>
-              <h4>Rohan Das</h4>
-              <p class="student-role">SDE at Google</p>
-              <div class="student-meta">
-                <span class="dot"></span>
-                <span>Class of 2024</span>
-              </div>
-            </div>
-      
-            <!-- Student 3 -->
-            <div class="placed-card">
-              <div class="placed-image">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQD9VTbEw_cqLFUOL6BEm_gTjfFHUsvcOyuSA0fSMETu4yUFAA9_XyB36BsWddQd3AE0M3TcYol7ZyimMGPDNrzFym5vu4W-K8gh86lSvNHnjr6Xe2dz6c9CxMg81uw4hVT9tbOqPRY2BQ2UM8f658RAV7rZrnMSddbRBuOahiTR86WN7oJU0BwoPcEOYTQsvRwcrF1eWZeSbXPq8pkcHOPtroKtkaEC_nvsWYhN28Ia3HRXpc0UDBrN1vN5OLtAtou1Ut0htZkeAJ" alt="Meera Nair">
-                <div class="salary-tag">₹14 LPA</div>
-              </div>
-              <h4>Meera Nair</h4>
-              <p class="student-role">UX Designer at Infosys</p>
-              <div class="student-meta">
-                <span class="dot"></span>
-                <span>Class of 2023</span>
-              </div>
-            </div>
-      
-            <!-- Student 4 -->
-            <div class="placed-card">
-              <div class="placed-image">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxtGOE2wObzw1WzNRNpqxT7d8yNcHX1-z_3r-oHRB1kYPNhWGTHz_yxs2gxdH58jnueq6MIxs8Sp3Wk5zLeJ-PYAqNBg6QOywdfZypxkqhYqAWeMctZnfvv3ekYSXgLU3QtxTGkgoYxMfw7Kaui9B726Gsw-2lTXc1q6-6vhJ0s_1CTFsx0rLtMRyREwD8hm-jYgdrndcfXZEVlLKqyOoeQCiE3IyIUrgjFC978UFhQDydZvaO8la4m211EJPtzaca05q0plKlOafP" alt="Arjun K.">
-                <div class="salary-tag">₹12 LPA</div>
-              </div>
-              <h4>Arjun K.</h4>
-              <p class="student-role">Systems Eng at TCS</p>
-              <div class="student-meta">
-                <span class="dot"></span>
-                <span>Class of 2024</span>
-              </div>
-            </div>
-      
-          </div>
-        </div>
-      </section>
-    <!-- Section 6: Process -->
-    <section class="process-section">
-        <div class="container">
-      
-          <div class="process-header">
-            <h2>Seamless Placement Process</h2>
-            <p>
-              Three simple steps to bridge the gap between your education and
-              professional career.
-            </p>
-          </div>
-      
-          <div class="process-wrapper">
-      
-            <!-- Connecting Line -->
-            <div class="process-line"></div>
-      
-            <div class="process-grid">
-      
-              <div class="process-card">
-                <div class="process-icon">
-                  <span class="material-symbols-outlined">how_to_reg</span>
-                </div>
-                <h4>Registration</h4>
-                <p>
-                  Students register and build their dynamic skill profiles
-                  on the portal.
-                </p>
-              </div>
-      
-              <div class="process-card">
-                <div class="process-icon">
-                  <span class="material-symbols-outlined">model_training</span>
-                </div>
-                <h4>Training &amp; Assessment</h4>
-                <p>
-                  Automated gap analysis and mock tests to prepare students
-                  for technical rounds.
-                </p>
-              </div>
-      
-              <div class="process-card">
-                <div class="process-icon">
-                  <span class="material-symbols-outlined">handshake</span>
-                </div>
-                <h4>Drives &amp; Interviews</h4>
-                <p>
-                  Shortlisted candidates participate in on-campus or virtual
-                  interview drives.
-                </p>
-              </div>
-      
-            </div>
-          </div>
-      
-        </div>
-      </section>
-    <!-- Section 7: AI Feature -->
-    <section class="ai-section">
-        <div class="ai-pattern"></div>
-      
-        <div class="container ai-wrapper">
-      
-          <div class="ai-left">
-      
-            <span class="ai-label">
-              Future Ready Technology
-            </span>
-      
-            <h2>AI-Powered Skill Gap Analysis</h2>
-      
-            <div class="ai-features">
-      
-              <div class="ai-feature">
-                <div class="ai-icon">
-                  <span class="material-symbols-outlined">check_circle</span>
-                </div>
-                <div>
-                  <h4>Real-time Industry Benchmarking</h4>
-                  <p>
-                    Compare student skills against live JD
-                    requirements from Fortune 500 companies.
-                  </p>
-                </div>
-              </div>
-      
-              <div class="ai-feature">
-                <div class="ai-icon">
-                  <span class="material-symbols-outlined">check_circle</span>
-                </div>
-                <div>
-                  <h4>Automated Roadmap Generation</h4>
-                  <p>
-                    AI suggests specific courses and projects to
-                    bridge identified skill deficiencies.
-                  </p>
-                </div>
-              </div>
-      
-              <div class="ai-feature">
-                <div class="ai-icon">
-                  <span class="material-symbols-outlined">check_circle</span>
-                </div>
-                <div>
-                  <h4>Predictive Placement Scoring</h4>
-                  <p>
-                    Calculate the probability of placement based on
-                    historical data and current profile.
-                  </p>
-                </div>
-              </div>
-      
-            </div>
-          </div>
-      
-          <div class="ai-right">
-      
-            <div class="ai-card">
-      
-              <div class="ai-visual">
-                <span class="material-symbols-outlined">psychology</span>
-              </div>
-      
-              <div class="ai-badge">
-                98.4% Accuracy
-              </div>
-      
-            </div>
-      
-          </div>
-      
-        </div>
-      </section>
-    <!-- Section 8: Active Drives -->
-    <section class="drives-section">
-        <div class="container">
-      
-          <div class="drives-header">
-            <h2>Active Recruitment Drives</h2>
-      
-            <div class="live-indicator">
-              <span class="live-dot"></span>
-              <span class="live-text">Live Now</span>
-            </div>
-          </div>
-      
-          <div class="drives-grid">
-      
-            <!-- Drive 1 -->
-            <div class="drive-card">
-      
-              <div class="drive-top">
-                <div class="drive-icon">
-                  <span class="material-symbols-outlined">corporate_fare</span>
-                </div>
-                <span class="drive-badge primary-badge">ON-CAMPUS</span>
-              </div>
-      
-              <h4>Software Engineer (L3)</h4>
-              <p class="drive-company">Google India • Bangalore</p>
-      
-              <div class="drive-tags">
-                <span>B.Tech/BE</span>
-                <span>7.5+ CGPA</span>
-              </div>
-      
-              <div class="drive-footer">
-                <div class="deadline">
-                  <span class="material-symbols-outlined">schedule</span>
-                  2d 14h left
-                </div>
-                <button class="apply-btn">Apply Now</button>
-              </div>
-      
-            </div>
-      
-            <!-- Drive 2 -->
-            <div class="drive-card">
-      
-              <div class="drive-top">
-                <div class="drive-icon">
-                  <span class="material-symbols-outlined">data_exploration</span>
-                </div>
-                <span class="drive-badge gray-badge">VIRTUAL</span>
-              </div>
-      
-              <h4>Financial Analyst</h4>
-              <p class="drive-company">J.P. Morgan • Mumbai</p>
-      
-              <div class="drive-tags">
-                <span>MBA/Finance</span>
-                <span>No Backlogs</span>
-              </div>
-      
-              <div class="drive-footer">
-                <div class="deadline">
-                  <span class="material-symbols-outlined">schedule</span>
-                  18h left
-                </div>
-                <button class="apply-btn">Apply Now</button>
-              </div>
-      
-            </div>
-      
-            <!-- Drive 3 -->
-            <div class="drive-card">
-      
-              <div class="drive-top">
-                <div class="drive-icon">
-                  <span class="material-symbols-outlined">settings_suggest</span>
-                </div>
-                <span class="drive-badge primary-badge">ON-CAMPUS</span>
-              </div>
-      
-              <h4>Management Trainee</h4>
-              <p class="drive-company">Amazon • Gurgaon</p>
-      
-              <div class="drive-tags">
-                <span>Any Stream</span>
-                <span>All Sem</span>
-              </div>
-      
-              <div class="drive-footer">
-                <div class="deadline">
-                  <span class="material-symbols-outlined">schedule</span>
-                  4d 0h left
-                </div>
-                <button class="apply-btn">Apply Now</button>
-              </div>
-      
-            </div>
-      
-          </div>
-      
-        </div>
-      </section>
-    <!-- Section 9: Testimonial -->
-    <section class="testimonial-section">
-        <div class="container testimonial-wrapper">
-      
-          <span class="material-symbols-outlined quote-icon">
-            format_quote
+      </div>
+    </div>
+  </header>
+
+  <!-- Section 1: Hero -->
+  <section class="hero-section">
+    <div class="container hero-wrapper">
+
+      <div class="hero-left">
+
+        <div class="hero-badges">
+          <span class="badge badge-primary">
+            NAAC Accredited
           </span>
-      
-          <p class="testimonial-text">
-            "PlacementPro has revolutionized how we manage campus recruitment. We've seen a 30% increase in
-            efficiency and much better matching between student skills and recruiter expectations."
+          <span class="badge badge-gray">
+            Estd. 2001
+          </span>
+        </div>
+
+        <h1 class="hero-title">
+          Empowering Careers Through
+          <span class="highlight">Smart Placement</span>
+          Automation
+        </h1>
+
+        <p class="hero-description">
+          Streamline campus recruitment with real-time analytics, automated student tracking, and
+          industry-standard matching algorithms.
+        </p>
+
+        <div class="hero-buttons">
+          <button class="btn btn-large btn-primary hero-btn-primary">
+            Get Started Today
+          </button>
+          <button class="btn btn-large btn-outline hero-btn-secondary">
+            View Placement Reports
+          </button>
+        </div>
+
+      </div>
+
+      <div class="hero-right">
+
+        <div class="analytics-card glass-card">
+
+          <div class="analytics-header">
+            <h3>Placement Analytics</h3>
+            <span class="material-symbols-outlined more-icon">more_horiz</span>
+          </div>
+
+          <div class="analytics-grid">
+
+            <div class="analytics-box primary-box">
+              <p class="box-label">Applications</p>
+              <p class="box-value primary-text">1,240</p>
+              <div class="progress-bar">
+                <div class="progress-fill primary-fill" style="width:70%"></div>
+              </div>
+            </div>
+
+            <div class="analytics-box secondary-box">
+              <p class="box-label">Shortlisted</p>
+              <p class="box-value secondary-text">428</p>
+              <div class="progress-bar">
+                <div class="progress-fill secondary-fill" style="width:45%"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="student-list">
+
+            <div class="student-item">
+              <div class="avatar"></div>
+              <div class="student-info">
+                <p class="student-name">Rahul Mehta</p>
+                <p class="student-role">Software Intern - Adobe</p>
+              </div>
+              <span class="status-badge placed">PLACED</span>
+            </div>
+
+            <div class="student-item">
+              <div class="avatar"></div>
+              <div class="student-info">
+                <p class="student-name">Sanya Gupta</p>
+                <p class="student-role">Cloud Analyst - AWS</p>
+              </div>
+              <span class="status-badge offered">OFFERED</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Decorative background elements -->
+        <div class="decor decor-primary"></div>
+        <div class="decor decor-secondary"></div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 2: Credibility -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-wrapper">
+
+        <div class="about-image">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkI8ILyxwxahg7hq8sG8f6M9KGpucjCLoRwvxljMsUss56EG4gdcec7SP_B65sKYl-8dK0NlsePdVamFnYJMJ6-EpVemOk8NIZ29stxbjH30yyUemLGQz5yNNamxhUWsgg4gdBcy0RGuhMeKa6zXDgFWy-0FXBFJWf7DB1ow5P3xIQ3cx_eYIPG5gKxapHiStizNghqv04d-5TqxjveD9Kj7gIpG4eXKQ-Aw6ze8eJ6RS1TiL_aXHzfJR4j2yi43lw6E5U7uRzg9HR"
+            alt="Institutional Campus Main Entrance" />
+        </div>
+
+        <div class="about-content">
+
+          <h2>About the Placement Cell</h2>
+
+          <p class="about-quote">
+            "Our mission is to nurture the inherent potential of our students and provide them with the
+            best industrial opportunities, bridging the talent-expectation gap in the professional
+            world."
           </p>
-      
-          <div class="testimonial-author">
-            <h5>Mr. Rajesh Sharma</h5>
-            <p class="author-role">
-              Director, Training &amp; Placement Cell
+
+          <div class="tpo-card">
+
+            <div class="tpo-image">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqPEds_Fbf2R_2byG0pzwT-UMEg9gZPVsq96AhA5rU0fIti1sTaBPZGlnznaPX9mYFBhAbE1lMKc7GsWXgMfzhb5RNEseLoZfDt50ZGNB0PFh7QOs63RlmoZfIgr7u1e4SJHGyzX1PckEypIZ-1LsVCe_MKsuEVhimq_lYHZq63tiGPi_TwMSrtTooQ0zXBX8h8mSd7l6Dp8iDAxLg1P_eVlX0xXTWu4sfHhzLNc2GfZSIKg0c_yhPb6vkDGdgsY_GNUV-AWj_08Lz"
+                alt="Mr. Rajesh Sharma - Placement Officer" />
+            </div>
+
+            <div class="tpo-details">
+              <h4>Mr. Rajesh Sharma</h4>
+              <p class="tpo-role">Training & Placement Officer (TPO)</p>
+              <p class="tpo-experience">15+ years of Industry-Academia experience</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Stats -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+
+        <div class="stat-card">
+          <p class="stat-number primary-text">450+</p>
+          <p class="stat-label">Students Placed</p>
+          <p class="stat-trend secondary-text">
+            <span class="material-symbols-outlined trend-icon">trending_up</span>
+            +12% YoY
+          </p>
+        </div>
+
+        <div class="stat-card">
+          <p class="stat-number primary-text">₹24 LPA</p>
+          <p class="stat-label">Highest Package</p>
+          <p class="stat-trend secondary-text">
+            <span class="material-symbols-outlined trend-icon">trending_up</span>
+            New Record
+          </p>
+        </div>
+
+        <div class="stat-card">
+          <p class="stat-number primary-text">120+</p>
+          <p class="stat-label">Companies Visited</p>
+          <p class="stat-trend secondary-text">
+            <span class="material-symbols-outlined trend-icon">trending_up</span>
+            20 New Partners
+          </p>
+        </div>
+
+        <div class="stat-card">
+          <p class="stat-number primary-text">92%</p>
+          <p class="stat-label">Placement Rate</p>
+          <p class="stat-trend secondary-text">
+            <span class="material-symbols-outlined trend-icon">check_circle</span>
+            Industry Leading
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Recruiters -->
+  <section class="recruiters-section">
+    <div class="container">
+
+      <p class="recruiters-title">
+        Top Industry Recruiters
+      </p>
+
+      <div class="recruiters-logos">
+
+        <img
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqiD2kcmqEld88ySfTx1pQoxLUups1p5h_RrWHeRV96dLy7e1-JjWemmIskGmRZQQ9W5xx0jalEvEeH61OS2JeiIau31v6uArSJbudfn_ChBhl6HH-qxLe8bseSUDyu0SFnq4wPcpMlttc59V63kZKGpm-Y5OZHiQYGkuDgXX7hcFL3FvaIIGi_F_R0Fpl8fjTcSqPXD5--i9sH7UGvNo4NBEfnLCAxa-ktd-vgPygyKn18tqpI7WqBxM60eRYLd-4Z3mFeMJQB2km"
+          alt="TCS Logo" class="recruiter-logo" />
+
+        <img
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHGNevAoX0WqwkUV9UNbGyXdhvTbSl7mD_QM7yyfrOhdfI4d5XDYKxFL_aN12FIhkppyGA_2AzHw4wQPwDT6w4Lagx6jEpClLd3M5kGYwPzvtp5fXuw4iQyVa0kIqaOfcr3LO9pkGJUqehRDfrS6DjELUvBc8MXDPnMSLbtxNOYTS83o6wHVHliM6DjY3kucZXn8nU_qfSMDa-MiYuFf6uAtf0EFz8DQNoEdyAIhTUl0k5DW6KvzmJebbCWLet-C1U1NJ8NdvFlCsS"
+          alt="Infosys Logo" class="recruiter-logo small-logo" />
+
+        <img
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKsBCYm8Pj8AQu_8Mo6MMi5626_y2yWzaKalR0wPvLyFhDL_-WhAOov3yTE6krvFNlBSHFllESnIhlVMD50dzoh2tw6_dC32D3YS8ut1cLYZw_66buAMV8hPRnrJJSgewBAsHWwjswprNS58tswLGmi6eS6y356IQSaXMCDaceunG_nCmcf6ellN5hOtvZOCidBOvnyTqZHPW_PEBIsoj7nd-xnkwEF4Y7n8wkOyhFM2Ecom3aUa4WHmlVQO69to9RQ2vqPemjLmLI"
+          alt="Wipro Logo" class="recruiter-logo" />
+
+        <img
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxCIoMlRcIiUW7Ofoy3Iq3EYTTG6qYU55fq2SxWfnt1UGJddAcjLsMP2PzYG1XbHI4MDc0DbaXr_FQqmZqRDcYHjFiUMdDUFnXHss-3mHCgtKG8VbBXRMef49YavyQJ1MkhwMtlXa7wGwgEv_a8QtqfcFZgiMTLedrf2g7nip3TgEj5jiRnztySGP3Z0VA1r1cm2dAuowcleKoTfWb5EH9g_YTk8Z6kzkqUzl5IcraRoe88o0wr1TrDW-K2SCYfzdoOeY8B6dE2z_e"
+          alt="Accenture Logo" class="recruiter-logo small-logo" />
+
+        <img
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJTbfWPY9hhEMfegqfqS6BOFt1FicFhVq1Qeyvzulp3T3kgmxrHrenv3wFa4jkyBoMx3tLaW7Xw65hgXvPSMN8iUO0-6qHfehaaSH1HU-rhafTIxSGvPc4nWiPDreQtf-1tePE-14dEDe7vpfpAntuR0qAHKbzHwIqJNFcpOLgHZw-qq4CkQbQbsSL1GauSkCBm_4CvjhlYTYrY84l09tt9Q0ABFD5Cj5KiVYpDZ-bLiuNLK2z45JxL1fK3RFv4_QW2lTBnKTqddB8"
+          alt="Google Logo" class="recruiter-logo" />
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Success Stories -->
+  <section class="placed-section">
+    <div class="container">
+
+      <div class="placed-header">
+        <div>
+          <h2>Recently Placed Students</h2>
+          <p>Celebrating the success of our bright minds across global tech giants.</p>
+        </div>
+      </div>
+
+      <div class="placed-grid">
+
+        <!-- Student 1 -->
+        <div class="placed-card">
+          <div class="placed-image">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBP5Xyh7-4cCQogG3emeG5w-SX2aEKqaCckw&s"
+              alt="Aditi Verma">
+            <div class="salary-tag">₹18 LPA</div>
+          </div>
+          <h4>Aditi Verma</h4>
+          <p class="student-role">Data Analyst at Accenture</p>
+          <div class="student-meta">
+            <span class="dot"></span>
+            <span>Class of 2023</span>
+          </div>
+        </div>
+
+        <!-- Student 2 -->
+        <div class="placed-card">
+          <div class="placed-image">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvuwJ-zm5_pgbSL4kdNVZGftgfHbh1vDHACg&s"
+              alt="Rohan Das">
+            <div class="salary-tag">₹24 LPA</div>
+          </div>
+          <h4>Rohan Das</h4>
+          <p class="student-role">SDE at Google</p>
+          <div class="student-meta">
+            <span class="dot"></span>
+            <span>Class of 2024</span>
+          </div>
+        </div>
+
+        <!-- Student 3 -->
+        <div class="placed-card">
+          <div class="placed-image">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl6N0pdc_11DcbULfS-2NML6MFjsqIjG_SJw&s"
+              alt="Meera Nair">
+            <div class="salary-tag">₹14 LPA</div>
+          </div>
+          <h4>Meera Nair</h4>
+          <p class="student-role">UX Designer at Infosys</p>
+          <div class="student-meta">
+            <span class="dot"></span>
+            <span>Class of 2023</span>
+          </div>
+        </div>
+
+        <!-- Student 4 -->
+        <div class="placed-card">
+          <div class="placed-image">
+            <img
+              src="https://www.gla.ac.in/images/shubham-saraswat.jpg"
+              alt="Arjun K.">
+            <div class="salary-tag">₹12 LPA</div>
+          </div>
+          <h4>Arjun K.</h4>
+          <p class="student-role">Systems Eng at TCS</p>
+          <div class="student-meta">
+            <span class="dot"></span>
+            <span>Class of 2024</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Process -->
+  <section class="process-section">
+    <div class="container">
+
+      <div class="process-header">
+        <h2>Seamless Placement Process</h2>
+        <p>
+          Three simple steps to bridge the gap between your education and
+          professional career.
+        </p>
+      </div>
+
+      <div class="process-wrapper">
+
+        <!-- Connecting Line -->
+        <div class="process-line"></div>
+
+        <div class="process-grid">
+
+          <div class="process-card">
+            <div class="process-icon">
+              <span class="material-symbols-outlined">how_to_reg</span>
+            </div>
+            <h4>Registration</h4>
+            <p>
+              Students register and build their dynamic skill profiles
+              on the portal.
             </p>
           </div>
-      
+
+          <div class="process-card">
+            <div class="process-icon">
+              <span class="material-symbols-outlined">model_training</span>
+            </div>
+            <h4>Training &amp; Assessment</h4>
+            <p>
+              Automated gap analysis and mock tests to prepare students
+              for technical rounds.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-icon">
+              <span class="material-symbols-outlined">handshake</span>
+            </div>
+            <h4>Drives &amp; Interviews</h4>
+            <p>
+              Shortlisted candidates participate in on-campus or virtual
+              interview drives.
+            </p>
+          </div>
+
         </div>
-      </section>
-    <!-- Section 10: Final CTA -->
-    <section class="final-cta-section">
-        <div class="container">
-      
-          <div class="cta-box">
-      
-            <div class="cta-overlay"></div>
-      
-            <div class="cta-content">
-              <h2>Ready to Transform Campus Placements?</h2>
-      
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 7: AI Feature -->
+  <section class="ai-section">
+    <div class="ai-pattern"></div>
+
+    <div class="container ai-wrapper">
+
+      <div class="ai-left">
+
+        <span class="ai-label">
+          Future Ready Technology
+        </span>
+
+        <h2>AI-Powered Skill Gap Analysis</h2>
+
+        <div class="ai-features">
+
+          <div class="ai-feature">
+            <div class="ai-icon">
+              <span class="material-symbols-outlined">check_circle</span>
+            </div>
+            <div>
+              <h4>Real-time Industry Benchmarking</h4>
               <p>
-                Join the leading institutions that use PlacementPro to automate recruitment workflows and
-                empower student careers.
+                Compare student skills against live JD
+                requirements from Fortune 500 companies.
               </p>
-      
-              <div class="cta-buttons">
-                <button class="cta-btn primary-btn">
-                  Schedule Demo
-                </button>
-      
-                <button class="cta-btn outline-btn">
-                  Contact Support
-                </button>
-              </div>
             </div>
-      
           </div>
-      
-        </div>
-      </section>
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-      
-          <div class="footer-grid">
-      
-            <!-- Column 1 -->
-            <div class="footer-col">
-              <div class="footer-logo">
-                <span class="material-symbols-outlined logo-icon">hub</span>
-                <span class="logo-text">PlacementPro</span>
-              </div>
-      
-              <p class="footer-desc">
-                The ultimate institutional gateway for managing end-to-end recruitment lifecycle and student
-                career growth.
+
+          <div class="ai-feature">
+            <div class="ai-icon">
+              <span class="material-symbols-outlined">check_circle</span>
+            </div>
+            <div>
+              <h4>Automated Roadmap Generation</h4>
+              <p>
+                AI suggests specific courses and projects to
+                bridge identified skill deficiencies.
               </p>
-      
-              <div class="footer-socials">
-                <a href="#"><span class="material-symbols-outlined">public</span></a>
-                <a href="#"><span class="material-symbols-outlined">alternate_email</span></a>
-                <a href="#"><span class="material-symbols-outlined">group</span></a>
-              </div>
-            </div>
-      
-            <!-- Column 2 -->
-            <div class="footer-col">
-              <h4>Quick Links</h4>
-              <ul>
-                <li><a href="#">Placement Calendar</a></li>
-                <li><a href="#">Recruiter Guidelines</a></li>
-                <li><a href="#">Student Handbook</a></li>
-                <li><a href="#">Career Blog</a></li>
-              </ul>
-            </div>
-      
-            <!-- Column 3 -->
-            <div class="footer-col">
-              <h4>Contact Us</h4>
-              <ul class="contact-list">
-                <li>
-                  <span class="material-symbols-outlined">location_on</span>
-                  <span>Main Campus Road, Knowledge Park II, <br>New Delhi - 110045</span>
-                </li>
-                <li>
-                  <span class="material-symbols-outlined">call</span>
-                  <span>+91 (011) 2345 6789</span>
-                </li>
-                <li>
-                  <span class="material-symbols-outlined">mail</span>
-                  <span>tpo@placementpro.edu</span>
-                </li>
-              </ul>
-            </div>
-      
-            <!-- Column 4 -->
-            <div class="footer-col">
-              <h4>Our Location</h4>
-              <div class="footer-map">
-                <div class="map-placeholder">Map of New Delhi</div>
-              </div>
-            </div>
-      
-          </div>
-      
-          <!-- Bottom Row -->
-          <div class="footer-bottom">
-            <p>© 2024 PlacementPro. All rights reserved.</p>
-      
-            <div class="footer-bottom-links">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Service</a>
             </div>
           </div>
-      
+
+          <div class="ai-feature">
+            <div class="ai-icon">
+              <span class="material-symbols-outlined">check_circle</span>
+            </div>
+            <div>
+              <h4>Predictive Placement Scoring</h4>
+              <p>
+                Calculate the probability of placement based on
+                historical data and current profile.
+              </p>
+            </div>
+          </div>
+
         </div>
-      </footer>
+      </div>
+
+      <div class="ai-right">
+
+        <div class="ai-card">
+
+          <div class="ai-visual">
+            <span class="material-symbols-outlined">psychology</span>
+          </div>
+
+          <div class="ai-badge">
+            98.4% Accuracy
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 8: Active Drives -->
+  <!-- <section class="drives-section">
+    <div class="container">
+
+      <div class="drives-header">
+        <h2>Active Recruitment Drives</h2>
+
+        <div class="live-indicator">
+          <span class="live-dot"></span>
+          <span class="live-text">Live Now</span>
+        </div>
+      </div>
+
+      <div class="drives-grid">
+
+        Drive 1
+        <div class="drive-card">
+
+          <div class="drive-top">
+            <div class="drive-icon">
+              <span class="material-symbols-outlined">corporate_fare</span>
+            </div>
+            <span class="drive-badge primary-badge">ON-CAMPUS</span>
+          </div>
+
+          <h4>Software Engineer (L3)</h4>
+          <p class="drive-company">Google India • Bangalore</p>
+
+          <div class="drive-tags">
+            <span>B.Tech/BE</span>
+            <span>7.5+ CGPA</span>
+          </div>
+
+          <div class="drive-footer">
+            <div class="deadline">
+              <span class="material-symbols-outlined">schedule</span>
+              2d 14h left
+            </div>
+            <button class="apply-btn">Apply Now</button>
+          </div>
+
+        </div>
+
+        Drive 2
+        <div class="drive-card">
+
+          <div class="drive-top">
+            <div class="drive-icon">
+              <span class="material-symbols-outlined">data_exploration</span>
+            </div>
+            <span class="drive-badge gray-badge">VIRTUAL</span>
+          </div>
+
+          <h4>Financial Analyst</h4>
+          <p class="drive-company">J.P. Morgan • Mumbai</p>
+
+          <div class="drive-tags">
+            <span>MBA/Finance</span>
+            <span>No Backlogs</span>
+          </div>
+
+          <div class="drive-footer">
+            <div class="deadline">
+              <span class="material-symbols-outlined">schedule</span>
+              18h left
+            </div>
+            <button class="apply-btn">Apply Now</button>
+          </div>
+
+        </div>
+
+        Drive 3
+        <div class="drive-card">
+          <div class="drive-top">
+            <div class="drive-icon">
+              <span class="material-symbols-outlined">settings_suggest</span>
+            </div>
+            <span class="drive-badge primary-badge">ON-CAMPUS</span>
+          </div>
+
+          <h4>Management Trainee</h4>
+          <p class="drive-company">Amazon • Gurgaon</p>
+
+          <div class="drive-tags">
+            <span>Any Stream</span>
+            <span>All Sem</span>
+          </div>
+
+          <div class="drive-footer">
+            <div class="deadline">
+              <span class="material-symbols-outlined">schedule</span>
+              4d 0h left
+            </div>
+            <button class="apply-btn">Apply Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Section 9: Testimonial -->
+  <section class="testimonial-section">
+    <div class="container testimonial-wrapper">
+
+      <span class="material-symbols-outlined quote-icon">
+        format_quote
+      </span>
+
+      <p class="testimonial-text">
+        "PlacementPro has revolutionized how we manage campus recruitment. We've seen a 30% increase in
+        efficiency and much better matching between student skills and recruiter expectations."
+      </p>
+
+      <div class="testimonial-author">
+        <h5>Mr. Rajesh Sharma</h5>
+        <p class="author-role">
+          Director, Training &amp; Placement Cell
+        </p>
+      </div>
+
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Column 1 -->
+        <div class="footer-col">
+          <div class="footer-logo">
+            <span class="material-symbols-outlined logo-icon">hub</span>
+            <span class="logo-text">PlacementPro</span>
+          </div>
+
+          <p class="footer-desc">
+            The ultimate institutional gateway for managing end-to-end recruitment lifecycle and student
+            career growth.
+          </p>
+
+          <div class="footer-socials">
+            <a href="#"><span class="material-symbols-outlined">public</span></a>
+            <a href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+            <a href="#"><span class="material-symbols-outlined">group</span></a>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Placement Calendar</a></li>
+            <li><a href="#">Recruiter Guidelines</a></li>
+            <li><a href="#">Student Handbook</a></li>
+            <li><a href="#">Career Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul class="contact-list">
+            <li>
+              <span class="material-symbols-outlined">location_on</span>
+              <span>Main Campus Road, Knowledge Park II, <br>New Delhi - 110045</span>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">call</span>
+              <span>+91 (011) 2345 6789</span>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">mail</span>
+              <span>tpo@placementpro.edu</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4 -->
+        <div class="footer-col">
+          <h4>Our Location</h4>
+          <div class="footer-map">
+            <div class="map-placeholder">Map of New Delhi</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Row -->
+      <div class="footer-bottom">
+        <p>© 2024 PlacementPro. All rights reserved.</p>
+
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 
 </html>

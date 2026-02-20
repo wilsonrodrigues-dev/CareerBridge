@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select Resume Template</title>
+  <link rel="stylesheet" href="builder.css">
+</head>
+<body>
+
+<h2>Select Resume Template</h2>
+
+<div class="templates">
+  <div class="card" onclick="selectTemplate('modern')">
+    <h3>Modern Clean</h3>
+  </div>
+
+  <div class="card" onclick="selectTemplate('professional')">
+    <h3>Professional Two Column</h3>
+  </div>
+</div>
+
+<script>
+function selectTemplate(type) {
+  localStorage.setItem("resumeTemplate", type);
+  window.location.href = "resume-preview.html";
+}
+</script>
+
+</body>
+</html>

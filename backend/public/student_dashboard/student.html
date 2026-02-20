@@ -405,35 +405,6 @@
                         </table>
                     </div>
                 </section>
-
-                <!-- Section 4: Skill gap  -->
-                <section class="skill-gap-section">
-
-                    <div class="skill-content">
-
-                        <div class="skill-icon">
-                            <span class="material-symbols-outlined">lightbulb</span>
-                        </div>
-
-                        <div class="skill-text">
-                            <h4>Smart Skill Gap Insight</h4>
-                            <p>
-                                Our AI analyzed your target role
-                                <strong>Data Analyst</strong>.
-                                We identified that
-                                <span class="highlight-skill">PowerBI</span>
-                                is a missing skill compared to successful candidates.
-                            </p>
-                        </div>
-
-                        <div class="skill-action">
-                            <button class="white-btn">View Learning Recommendations</button>
-                            <p class="boost-text">Boost your hiring chance by 24%</p>
-                        </div>
-
-                    </div>
-
-                </section>
             </div>
             <!-- ELIGIBLE DRIVES PAGE -->
             <div id="drivesPage" class="page">
@@ -632,6 +603,12 @@
                 </section>
             </div>
 
+            <section class="skill-gap-section">
+                <div id="skillGapContainer" class="skill-content">
+                    Loading skill gap...
+                </div>
+            </section>
+
             <!-- footer -->
             <footer class="footer">
                 © 2023 PlacementPro Career Management System. All rights reserved.
@@ -667,14 +644,6 @@
 
             <div id="chat-box" class="chat-box">
                 <div class="bot-msg">Hello! How can I help you today?</div>
-
-                <div class="quick-actions" id="quick-actions">
-                    <p class="suggest-text">Common Questions:</p>
-                    <button class="action-btn" onclick="sendQuickQuery('cutoff')">Check Cutoff</button>
-                    <button class="action-btn" onclick="sendQuickQuery('venue')">Interview Venue</button>
-                    <button class="action-btn" onclick="sendQuickQuery('tcs')">TCS Eligibility</button>
-                    <button class="action-btn" onclick="sendQuickQuery('mock')">Mock Interview</button>
-                </div>
             </div>
 
             <div class="chat-input-area">
@@ -684,7 +653,75 @@
         </div>
     </div>
 
-    <script src="chatbot.js"></script>
+    <!-- <script src="chatbot.js"></script> -->
+
+    <script>
+        
+        const chatLauncher = document.getElementById("chat-launcher");
+        const chatContainer = document.getElementById("chat-container");
+        const closeChat = document.getElementById("close-chat");
+        const sendBtn = document.getElementById("send-btn");
+        const userInput = document.getElementById("user-input");
+        const chatBox = document.getElementById("chat-box");
+
+        /* ===============================
+           🎛 Open / Close Chat
+        ================================ */
+        chatLauncher.addEventListener("click", () => {
+            chatContainer.classList.toggle("chat-hidden");
+        });
+
+        closeChat.addEventListener("click", () => {
+            chatContainer.classList.add("chat-hidden");
+        });
+
+        /* ===============================
+           📩 Send Message
+        ================================ */
+        sendBtn.addEventListener("click", sendMessage);
+        userInput.addEventListener("keypress", function (e) {
+            if (e.key === "Enter") sendMessage();
+        });
+
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (!message) return;
+
+            addMessage(message, "user-msg");
+            userInput.value = "";
+
+            fetch("/api/ai/chat", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    // If using JWT authentication:
+                    // "Authorization": "Bearer " + localStorage.getItem("token")
+                },
+                body: JSON.stringify({ message })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    addMessage(data.reply, "bot-msg");
+                })
+                .catch(err => {
+                    console.error(err);
+                    addMessage("⚠ Unable to connect to server.", "bot-msg");
+                });
+        }
+
+        /* ===============================
+           💬 Add Message to Chat UI
+        ================================ */
+        function addMessage(text, className) {
+            const div = document.createElement("div");
+            div.classList.add(className);
+            div.textContent = text;
+            chatBox.appendChild(div);
+
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+        
+    </script>
     <script type="module" src="script.js"></script>
 
 </body>

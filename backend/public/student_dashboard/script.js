@@ -1,3 +1,15 @@
+const token = localStorage.getItem("token");
+const user = JSON.parse(localStorage.getItem("user"));
+
+if (!token) {
+  window.location.href = "/student_dashboard/login.html";
+}
+
+if (!user || !user.profileCompleted) {
+  window.location.href = "/student_dashboard/complete-profile.html";
+}
+
+
 const menuBtn = document.getElementById("menuToggle");
 const closeBtn = document.getElementById("closeSidebar");
 const sidebar = document.querySelector(".sidebar");
@@ -60,3 +72,40 @@ document.querySelectorAll(".viewmore-btn, .view-all").forEach(btn => {
         }
     });
 });
+
+async function loadSkillGap() {
+  try {
+    const token = localStorage.getItem("token");
+
+    const res = await fetch("/api/skill-gap/Software Engineer", {
+      headers: {
+        Authorization: "Bearer " + token
+      }
+    });
+
+    const data = await res.json();
+
+    const container = document.getElementById("skillGapContainer");
+
+    container.innerHTML = `
+      <div class="skill-icon">
+        <span class="material-symbols-outlined">lightbulb</span>
+      </div>
+
+      <div class="skill-text">
+        <h4>Smart Skill Gap Insight</h4>
+        <p>
+          Target Role: <strong>${data.role}</strong><br>
+          Match Percentage: <strong>${data.matchPercentage}%</strong><br>
+          Missing Skills:
+          <strong>${data.missingSkills.join(", ") || "None"}</strong>
+        </p>
+      </div>
+    `;
+
+  } catch (err) {
+    console.log("Skill gap error:", err);
+  }
+}
+
+  loadSkillGap();

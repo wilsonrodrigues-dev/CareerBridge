@@ -13,12 +13,7 @@ mongoose.connect(process.env.MONGO_URI).then(async () => {
     role: "student"
   });
 
-  // await User.create({
-  //   name: "Rajesh Kumar",
-  //   email: "admin@college.com",
-  //   password: hashed,
-  //   role: "placementOfficer"
-  // });
+
 
   console.log("Seed data created");
   process.exit();

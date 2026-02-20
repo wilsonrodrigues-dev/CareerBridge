@@ -51,16 +51,13 @@ const createDrive = async (req, res) => {
 //getting the eligible drives for user
 const getEligibleDrives = async (req, res) => {
   try {
-    const user = await require("../models/user.model").findById(req.user.id);
+    const user = await User.findById(req.user.id);
 
-    const drives = await Drive.find({ status: "Active" });
-
-    const eligibleDrives = drives.filter((drive) => {
-      return (
-        user.academicInfo.cgpa >= drive.criteria.minCgpa &&
-        drive.criteria.allowedBranches.includes(user.academicInfo.branch) &&
-        user.academicInfo.backlogs <= drive.criteria.maxBacklogs
-      );
+    const eligibleDrives = await Drive.find({
+      status: "Active",
+      "criteria.minCgpa": { $lte: user.academicInfo.cgpa },
+      "criteria.allowedBranches": user.academicInfo.branch,
+      "criteria.maxBacklogs": { $gte: user.academicInfo.backlogs }
     });
 
     res.json(eligibleDrives);

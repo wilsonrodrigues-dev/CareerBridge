@@ -17,6 +17,7 @@
         rel="stylesheet" />
         <link rel="stylesheet" href="student.css">
         <link rel="stylesheet" href="responsive.css">
+        <link rel="stylesheet" href="chatbot.css">
 
 
 </head>
@@ -143,7 +144,7 @@
 
                     <div class="card-buttons">
                         <button class="primary-btn">Generate Resume</button>
-                        <button class="secondary-btn">Edit Profile</button>
+                        <button class="secondary-btn" id="edit-btn">Edit Profile</button>
                     </div>
                 </div>
 
@@ -360,6 +361,51 @@
 </footer>
 </main>
 </div>
+
+<!-- chatbot -->
+ <div class="chat-wrapper">
+<div id="chat-label" class="chat-label">
+        PlacementBot
+        <div class="label-arrow"></div>
+    </div>
+
+    <!-- Chat Launcher -->
+    <div id="chat-launcher" class="chat-launcher">
+        <span>🤖</span>
+    </div>
+
+<div id="chat-container" class="chat-container chat-hidden">
+    <div class="chat-header">
+        <div class="header-content">
+            <div class="welcome-section">
+                
+                <h3 id="user-welcome">Welcome, Student</h3>
+                <span class="sub-text">Your Placement Assistant</span>
+                 
+            </div>
+          <button id="close-chat" class="close-btnn">&times;</button>
+        </div>
+    </div>
+    
+    <div id="chat-box" class="chat-box">
+        <div class="bot-msg">Hello! How can I help you today?</div>
+        
+        <div class="quick-actions" id="quick-actions">
+            <p class="suggest-text">Common Questions:</p>
+            <button class="action-btn" onclick="sendQuickQuery('cutoff')">Check Cutoff</button>
+            <button class="action-btn" onclick="sendQuickQuery('venue')">Interview Venue</button>
+            <button class="action-btn" onclick="sendQuickQuery('tcs')">TCS Eligibility</button>
+            <button class="action-btn" onclick="sendQuickQuery('mock')">Mock Interview</button>
+        </div>
+    </div>
+
+    <div class="chat-input-area">
+        <input type="text" id="user-input" placeholder="Type a message...">
+        <button id="send-btn">Send</button>
+    </div>
+</div>
+</div>
+
 <script>
 const menuBtn = document.getElementById("menuToggle");
 const closeBtn = document.getElementById("closeSidebar");
@@ -380,6 +426,7 @@ menuBtn.addEventListener("click", openSidebar);
 closeBtn.addEventListener("click", closeSidebar);
 overlay.addEventListener("click", closeSidebar);
 </script>
+<script src="chatbot.js"></script>
 </body>
 
 </html>

@@ -170,9 +170,20 @@ body {
   background: #f43f5e;
   border-radius: 50%;
 }
-/* =====================================
-   RESPONSIVE STRUCTURE FIX
-===================================== */
+
+.page {
+  display: none; 
+  animation: fadeIn 0.3s ease;
+}
+
+.active-page {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
 /* ---------- LARGE TABLET ---------- */
 @media (max-width: 1024px) {
@@ -666,6 +677,14 @@ height: fit-content;
   padding: 10px;
   border-radius: 8px;
   cursor: not-allowed;
+}
+#edit-btn {
+  background: #f1f5f9;
+  color: #1e3b8a;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 /* ===============================
    DRIVE CARD RESPONSIVE

@@ -170,7 +170,152 @@ body {
   background: #f43f5e;
   border-radius: 50%;
 }
+/* =====================================
+   RESPONSIVE STRUCTURE FIX
+===================================== */
 
+/* ---------- LARGE TABLET ---------- */
+@media (max-width: 1024px) {
+
+  .sidebar {
+    width: 220px;
+  }
+
+  .main {
+    margin-left: 220px;
+  }
+
+}
+
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 768px) {
+
+  /* Break desktop flex structure */
+  .layout {
+    display: block;
+  }
+
+  /* Sidebar becomes overlay */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  /* Remove sidebar spacing */
+  .main {
+    margin-left: 0 !important;
+    width: 100%;
+  }
+
+  /* Navbar stacks */
+  .top-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 20px;
+  }
+
+  .navbar-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+}
+
+/* Hide hamburger on desktop */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hide close button & overlay by default */
+.close-btn,
+.overlay {
+  display: none;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  /* Show hamburger */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Sidebar becomes hidden panel */
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 260px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  /* Remove main left spacing */
+  .main {
+    margin-left: 0 !important;
+  }
+
+  /* Overlay background */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0);
+    display: none;
+    z-index: 999;
+  }
+
+  .overlay.active {
+    display: block;
+  }
+
+  /* Close button inside sidebar */
+  .close-btn {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: white;
+    cursor: pointer;
+  }
+
+}
+/* ---------- SMALL MOBILE ---------- */
+@media (max-width: 480px) {
+
+  .top-navbar {
+    padding: 14px 16px;
+  }
+
+  .profile-completion-mini {
+    padding: 6px 12px;
+  }
+
+}
 /* ===== PROFILE CARD ===== */
 .content {
   padding: 40px;
@@ -263,7 +408,99 @@ body {
   cursor: pointer;
 }
 
+/* ===============================
+   RESPONSIVE FIX
+=============================== */
 
+@media (max-width: 1024px) {
+
+  /* Reduce left space if sidebar shrinks */
+  .main {
+    margin-left: 220px;
+  }
+
+  .content {
+    padding: 30px;
+  }
+
+}
+
+/* ===============================
+   TABLET
+=============================== */
+
+@media (max-width: 768px) {
+
+  /* Remove sidebar space */
+  .main {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  /* Navbar stacks cleanly */
+  .top-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 20px;
+  }
+
+  .navbar-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Reduce content padding */
+  .content {
+    padding: 20px;
+  }
+
+  /* Profile card stacks vertically */
+  .profile-card {
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px;
+  }
+
+  .profile-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-right {
+    min-width: 100%;
+  }
+
+  .card-buttons {
+    flex-direction: column;
+  }
+
+}
+
+/* ===============================
+   SMALL MOBILE
+=============================== */
+
+@media (max-width: 480px) {
+
+  .content {
+    padding: 15px;
+  }
+
+  .profile-card {
+    padding: 20px;
+  }
+
+  .big-avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .profile-left h2 {
+    font-size: 18px;
+  }
+
+}
 
 /* ===== Drives Section ===== */
 
@@ -430,7 +667,74 @@ height: fit-content;
   border-radius: 8px;
   cursor: not-allowed;
 }
+/* ===============================
+   DRIVE CARD RESPONSIVE
+=============================== */
 
+/* Tablet adjustments */
+@media (max-width: 768px) {
+
+  .drive-card {
+    padding: 20px;
+  }
+
+  /* Stack logo + badge vertically if needed */
+  .card-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  /* Make badge align properly */
+  .badge {
+    align-self: flex-start;
+  }
+
+  /* Stack info rows cleanly */
+  .info-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  /* Improve spacing */
+  .role {
+    margin-bottom: 12px;
+  }
+
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+
+  .drive-card {
+    padding: 16px;
+  }
+
+  .company-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .company-logo img {
+    width: 22px;
+  }
+
+  .badge {
+    font-size: 9px;
+    padding: 4px 8px;
+  }
+
+  .info-row {
+    font-size: 12px;
+  }
+
+  .primary-btn,
+  .disabled-btn {
+    padding: 9px;
+    font-size: 13px;
+  }
+
+}
 /* =========================
    SECTION 3 - TRACKER
 ========================= */
@@ -551,7 +855,85 @@ height: fit-content;
   text-decoration: underline;
 }
 
+/* ===============================
+   TRACKER SECTION RESPONSIVE
+=============================== */
 
+/* Tablet */
+@media (max-width: 1024px) {
+
+  .tracker-section {
+    margin: 40px 20px;
+  }
+
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  /* Reduce outer spacing */
+  .tracker-section {
+    margin: 30px 15px;
+  }
+
+  /* Stack header content */
+  .tracker-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .tracker-header h4 {
+    font-size: 18px;
+  }
+
+  /* Reduce table padding */
+  .tracker-table th {
+    padding: 12px 15px;
+    font-size: 11px;
+  }
+
+  .tracker-table td {
+    padding: 14px 15px;
+    font-size: 13px;
+  }
+
+  /* Stack company cell nicely */
+  .company-cell {
+    flex-direction: row;
+    align-items: center;
+  }
+
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+
+  .tracker-section {
+    margin: 20px 10px;
+  }
+
+  .tracker-header {
+    padding: 15px;
+  }
+
+  .tracker-table th,
+  .tracker-table td {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .status {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .download-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+}
 /* =========================
    SECTION 4 - SKILL GAP
 ========================= */
@@ -645,4 +1027,80 @@ height: fit-content;
   font-size: 14px;
   color: #64748b;
   border-top: 1px solid #e2e8f0;
+}
+
+/* ===============================
+   SKILL GAP RESPONSIVE
+=============================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+
+  .skill-gap-section {
+    margin: 40px 20px;
+    padding: 30px;
+  }
+
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .skill-gap-section {
+    margin: 30px 15px;
+    padding: 25px;
+  }
+
+  .skill-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .skill-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .skill-icon span {
+    font-size: 30px;
+  }
+
+  .skill-text h4 {
+    font-size: 18px;
+  }
+
+  .skill-action {
+    width: 100%;
+    text-align: left;
+  }
+
+  .white-btn {
+    width: 100%;
+  }
+
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+
+  .skill-gap-section {
+    margin: 20px 10px;
+    padding: 20px;
+  }
+
+  .skill-text p {
+    font-size: 14px;
+  }
+
+  .boost-text {
+    font-size: 11px;
+  }
+
+  .footer {
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 13px;
+  }
+
 }

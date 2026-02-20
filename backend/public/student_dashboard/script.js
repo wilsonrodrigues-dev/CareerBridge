@@ -44,3 +44,19 @@ navItems.forEach(item => {
         overlay.classList.remove("active");
     });
 });
+
+document.querySelectorAll(".viewmore-btn, .view-all").forEach(btn => {
+    btn.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const targetPage = this.dataset.page;
+
+        const sidebarLink = document.querySelector(
+            `.nav-item[data-page="${targetPage}"]`
+        );
+
+        if (sidebarLink) {
+            sidebarLink.click(); // simulate sidebar click
+        }
+    });
+});

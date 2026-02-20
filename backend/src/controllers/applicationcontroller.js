@@ -89,8 +89,27 @@ const updateApplicationStatus = async (req, res) => {
   }
 };
 
+const getApplicationsStats = async (req, res) => {
+  try {
+    const stats = await applicationmodel.aggregate([
+      {
+        $group: {
+          _id: { $month: "$appliedAt" },
+          count: { $sum: 1 }
+        }
+      },
+      { $sort: { _id: 1 } }
+    ]);
+
+    res.json(stats);
+  } catch (error) {
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
 module.exports = {
   applyToDrive,
   getApplicantsByDrive,
   updateApplicationStatus,
+  getApplicationsStats
 };

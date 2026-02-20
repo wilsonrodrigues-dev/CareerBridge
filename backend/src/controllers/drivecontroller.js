@@ -3,6 +3,7 @@ const User = require("../models/user.model");
 const getEligibleStudents = require("../utils/eligibilityengine");
 const Notification = require("../models/notification.model");
 const ActivityLog = require("../models/activitylog.model");
+const Application = require("../models/application.model");
 
 //crerating the drive with emailfor eligible students
 const createDrive = async (req, res) => {
@@ -69,7 +70,32 @@ const getEligibleDrives = async (req, res) => {
   }
 };
 
+const getAllDrives = async (req, res) => {
+  try {
+    const drives = await Drive.find().sort({ createdAt: -1 });
+
+    const drivesWithApplicantCount = await Promise.all(
+      drives.map(async (drive) => {
+        const count = await Application.countDocuments({
+          drive: drive._id
+        });
+
+        return {
+          ...drive._doc,
+          applicantCount: count
+        };
+      })
+    );
+
+    res.json(drivesWithApplicantCount);
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
 module.exports = {
   createDrive,
-  getEligibleDrives,
+  getEligibleDrives,getAllDrives
 };

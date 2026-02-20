@@ -10,5 +10,5 @@ userrouter.put(
   roleMiddleware("student"),
   completeProfile,
 );
-
+// userrouter.get("/profile", authMiddleware, getUserProfile);
 module.exports = userrouter;

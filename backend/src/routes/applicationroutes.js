@@ -4,7 +4,7 @@ const router = express.Router();
 const authMiddleware = require("../middleware/authmiddleware");
 const roleMiddleware = require("../middleware/rolemiddleware");
 
-const  {applyToDrive,getApplicantsByDrive,updateApplicationStatus}  = require("../controllers/applicationcontroller");
+const  {applyToDrive,getApplicantsByDrive,updateApplicationStatus,getApplicationsStats}  = require("../controllers/applicationcontroller");
 
 router.post(
   "/apply/:driveId",
@@ -26,6 +26,9 @@ router.put(
   roleMiddleware("placementOfficer"),
   updateApplicationStatus
 );
+
+router.get("/stats/applications",  authMiddleware,
+  roleMiddleware("placementOfficer"), getApplicationsStats);
 
 
 module.exports = router;

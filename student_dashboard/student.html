@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Student Career Dashboard | PlacementPro</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+        <link rel="stylesheet" href="student.css">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1e3b8a",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#121620",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo-section">
+            <div class="logo-icon">
+                <span class="material-symbols-outlined">rocket_launch</span>
+            </div>
+            <h1>PlacementPro</h1>
+        </div>
+
+        <nav class="nav">
+            <a class="nav-item active" href="#">
+                <span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+            <a class="nav-item" href="#">
+                <span class="material-symbols-outlined">work</span>
+                Eligible Drives
+            </a>
+            <a class="nav-item" href="#">
+                <span class="material-symbols-outlined">description</span>
+                My Applications
+            </a>
+            <a class="nav-item" href="#">
+                <span class="material-symbols-outlined">edit_note</span>
+                Resume Builder
+            </a>
+
+            <div class="account-label">Account</div>
+
+            <a class="nav-item" href="#">
+                <span class="material-symbols-outlined">settings</span>
+                Profile Settings
+            </a>
+
+            <a class="nav-item logout" href="#">
+                <span class="material-symbols-outlined">logout</span>
+                Logout
+            </a>
+        </nav>
+
+        <div class="help-box">
+            <p class="help-title">Need Help?</p>
+            <p class="help-text">Get in touch with the placement cell.</p>
+            <button class="help-btn">Contact Support</button>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <!-- TOP NAVBAR -->
+        <header class="top-navbar">
+            <div>
+                <h2>Welcome, Wilson 👋</h2>
+                <p>Here's what's happening today.</p>
+            </div>
+
+            <div class="navbar-right">
+
+                <div class="profile-completion-mini">
+                    <span>Profile Completion</span>
+                    <div class="mini-progress">
+                        <div class="mini-fill" style="width: 80%;"></div>
+                    </div>
+                    <strong>80%</strong>
+                </div>
+
+                <button class="notification-btn">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="profile-section">
+                    <div class="profile-text">
+                        <p class="name">Wilson S.</p>
+                        <p class="roll">Roll No: 2024CS012</p>
+                    </div>
+                    <div class="avatar"></div>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- DASHBOARD CONTENT -->
+        <div class="content">
+
+            <!-- PROFILE SUMMARY CARD -->
+            <section class="profile-card">
+
+                <div class="profile-left">
+                    <div class="big-avatar"></div>
+                    <div>
+                        <h2>Wilson S.</h2>
+                        <div class="profile-meta">
+                            <span>🎓 B.Tech CSE</span>
+                            <span>•</span>
+                            <span>⭐ 8.5 CGPA</span>
+                            <span>•</span>
+                            <span>Batch of 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-right">
+                    <div class="progress-header">
+                        <span>Profile Completion</span>
+                        <strong>80%</strong>
+                    </div>
+
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:80%;"></div>
+                    </div>
+
+                    <div class="card-buttons">
+                        <button class="primary-btn">Generate Resume</button>
+                        <button class="secondary-btn">Edit Profile</button>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+
+
+
+              <!-- Section 2: Eligible Drives -->
+<section class="drives-section">
+
+    <div class="section-header">
+        <h4>
+            <span class="material-symbols-outlined section-icon">campaign</span>
+            Eligible Placement Drives
+        </h4>
+        <a href="#" class="view-all">View All Active Drives</a>
+    </div>
+
+    <div class="drives-grid">
+
+        <!-- CARD 1 -->
+        <div class="drive-card">
+
+            <div class="card-top">
+                <div class="company-logo">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxhqAv4y5IOHo3AwhNbckQyJOcbf0DEjBkhjNey06GS7sFnPy9n7RdpBX2Am3IJ0EDYdRLzyFm2ejTNHm8gyN2kvnkZnp5j61ezDe7FVZzVXChDUktfRR2hyKlPm-Xh4-bYD_4fYaKH5A2Jpkhs8dzdUC_fbrnCJFpLUYVKb3Zs0vMXim8Y2U3mDDHTS5dah6Xh0QVaxJoUeC2eDzjxeCSl5ZX6jfs1Xpvg1A0l1wIsg8ACx9jLzvAGsVCMSSRm2io9zwdoa5uAv-f">
+                </div>
+                <span class="badge badge-green">High Package</span>
+            </div>
+
+            <h5>Google</h5>
+            <p class="role">Software Engineer (L3)</p>
+
+            <div class="info-row">
+                <span>Min. CGPA</span>
+                <strong>8.0+</strong>
+            </div>
+
+            <div class="info-row">
+                <span>Deadline</span>
+                <strong class="text-red">24 Oct, 2023</strong>
+            </div>
+
+            <button class="primary-btn full">Apply Now</button>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="drive-card">
+
+            <div class="card-top">
+                <div class="company-logo">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5RODxmO1MYK7Jhona14mctdzdQZaoLDlOmEUvVH9k1PBFpgMlaJmBxAlnxKuBZf18uF7-DV_3-bqyocLeQnaXkRxDYxlqzQyQxn5oBN8i2S2-D_QcTdrV8Mc0FsJheHsHZ8qr3z_S9Eusx7hbviOZ6DBgTlHw60L0fxNEBD22AsvGkjfltjSapDDzKgczk-CiIqOWcy8OvrJq0hKqeSRqSkjr240-4sb-y68NYoWQJzLbY66UqUDqSnKOhSUb4INyF60OWuDEJ2-F">
+                </div>
+                <span class="badge badge-blue">Applied</span>
+            </div>
+
+            <h5>Adobe</h5>
+            <p class="role">Product Designer</p>
+
+            <div class="info-row">
+                <span>Min. CGPA</span>
+                <strong>7.5+</strong>
+            </div>
+
+            <div class="info-row">
+                <span>Deadline</span>
+                <strong>Closed</strong>
+            </div>
+
+            <button class="disabled-btn full" disabled>Application Submitted</button>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="drive-card">
+
+            <div class="card-top">
+                <div class="company-logo">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFxWEZHWSe0v1vHuVkkCliQDkur_UtaLZexnhC79A_jkitrV_zFzvuqvj1hSAh_rvLJLY6n9D1ajNg6LgJ1H84SARHh8ncmDzyCia1rdGmHCN8XWpS39uLdkhacTlEnU40wzt1y2HFGdhOoapbJpRPMuLFK3rJMydDCnuqntU3f54TVi_1PQe92pzPfsvt5xVz1s4oNnurcgCdYFe66vE5CSg0D8A2mjF0yQs3vlEtoVbGO2fvk4shN_H2KSKwPYgXIpTi_FRZpxpS">
+                </div>
+                <span class="badge badge-yellow">Ending Soon</span>
+            </div>
+
+            <h5>Microsoft</h5>
+            <p class="role">Data Engineer</p>
+
+            <div class="info-row">
+                <span>Min. CGPA</span>
+                <strong>8.5+</strong>
+            </div>
+
+            <div class="info-row">
+                <span>Deadline</span>
+                <strong class="text-red">Tomorrow</strong>
+            </div>
+
+            <button class="primary-btn full">Apply Now</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+                <!-- Section 3: Application Tracker Table -->
+               <!-- ================= SECTION 3 ================= -->
+<section class="tracker-section">
+
+    <div class="tracker-header">
+        <h4>
+            <span class="material-symbols-outlined icon-primary">track_changes</span>
+            Application Tracker
+        </h4>
+        <button class="download-btn">Download Report</button>
+    </div>
+
+    <div class="table-wrapper">
+        <table class="tracker-table">
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Role</th>
+                    <th>Applied Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="company-cell">
+                            <div class="company-icon">G</div>
+                            <span class="company-name">Google</span>
+                        </div>
+                    </td>
+                    <td>Software Engineer</td>
+                    <td>Oct 12, 2023</td>
+                    <td>
+                        <span class="status purple">Interview Scheduled</span>
+                    </td>
+                    <td class="action-link">View Details</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="company-cell">
+                            <div class="company-icon primary">A</div>
+                            <span class="company-name">Adobe</span>
+                        </div>
+                    </td>
+                    <td>Product Designer</td>
+                    <td>Oct 08, 2023</td>
+                    <td>
+                        <span class="status blue">Applied</span>
+                    </td>
+                    <td class="action-link">View Details</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="company-cell">
+                            <div class="company-icon red">O</div>
+                            <span class="company-name">Oracle</span>
+                        </div>
+                    </td>
+                    <td>Cloud Analyst</td>
+                    <td>Sept 30, 2023</td>
+                    <td>
+                        <span class="status green">Selected</span>
+                    </td>
+                    <td class="action-link">View Offer</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+<!-- ================= SECTION 4 ================= -->
+<section class="skill-gap-section">
+
+    <div class="skill-content">
+
+        <div class="skill-icon">
+            <span class="material-symbols-outlined">lightbulb</span>
+        </div>
+
+        <div class="skill-text">
+            <h4>Smart Skill Gap Insight</h4>
+            <p>
+                Our AI analyzed your target role 
+                <strong>Data Analyst</strong>.
+                We identified that 
+                <span class="highlight-skill">PowerBI</span> 
+                is a missing skill compared to successful candidates.
+            </p>
+        </div>
+
+        <div class="skill-action">
+            <button class="white-btn">View Learning Recommendations</button>
+            <p class="boost-text">Boost your hiring chance by 24%</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    © 2023 PlacementPro Career Management System. All rights reserved.
+</footer>
+
+</body>
+
+</html>

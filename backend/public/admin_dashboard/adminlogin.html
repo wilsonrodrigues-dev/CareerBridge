@@ -1,43 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Login</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #0a0e1a;
+      --surface: #111827;
+      --card: #161d2e;
+      --border: rgba(255, 255, 255, 0.07);
+      --accent: #4f8ef7;
+      --accent2: #a78bfa;
+      --text: #f1f5f9;
+      --muted: #64748b;
+      --success: #34d399;
+      --error: #f87171;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Ambient background blobs */
+    .blob {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.18;
+      animation: drift 12s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    .blob-1 {
+      width: 500px;
+      height: 500px;
+      background: var(--accent);
+      top: -150px;
+      left: -150px;
+      animation-delay: 0s;
+    }
+
+    .blob-2 {
+      width: 400px;
+      height: 400px;
+      background: var(--accent2);
+      bottom: -100px;
+      right: -100px;
+      animation-delay: -4s;
+    }
+
+    .blob-3 {
+      width: 300px;
+      height: 300px;
+      background: #06b6d4;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation-delay: -8s;
+    }
+
+    @keyframes drift {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      100% {
+        transform: translate(30px, 20px) scale(1.08);
+      }
+    }
+
+    /* Dot grid */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+
+    .login-wrapper {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 440px;
+      padding: 24px;
+      animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Badge */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(79, 142, 247, 0.12);
+      border: 1px solid rgba(79, 142, 247, 0.3);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+      }
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px 36px 36px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.03);
+    }
+
+    .header {
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-top: 6px;
+      font-weight: 400;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .input-wrap {
+      position: relative;
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: 16px;
+      pointer-events: none;
+      transition: color 0.2s;
+    }
+
+    input#email,
+    input#password {
+      width: 100%;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 13px 16px 13px 42px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14.5px;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+      -webkit-appearance: none;
+    }
+
+    input#email::placeholder,
+    input#password::placeholder {
+      color: #3a4560;
+    }
+
+    input#email:focus,
+    input#password:focus {
+      border-color: var(--accent);
+      background: rgba(79, 142, 247, 0.04);
+      box-shadow: 0 0 0 3px rgba(79, 142, 247, 0.12);
+    }
+
+    input#email:focus~.input-icon,
+    input#password:focus~.input-icon {
+      color: var(--accent);
+    }
+
+    /* Toggle password visibility */
+    .eye-toggle {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 16px;
+      padding: 2px;
+      transition: color 0.2s;
+    }
+
+    .eye-toggle:hover {
+      color: var(--text);
+    }
+
+    .forgot {
+      text-align: right;
+      margin-top: -10px;
+      margin-bottom: 24px;
+    }
+
+    .forgot a {
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .forgot a:hover {
+      color: var(--accent);
+    }
+
+    button[onclick="login()"] {
+      width: 100%;
+      background: linear-gradient(135deg, var(--accent) 0%, #6366f1 100%);
+      border: none;
+      border-radius: 12px;
+      padding: 14px;
+      font-family: 'Syne', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+      box-shadow: 0 6px 20px rgba(79, 142, 247, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    button[onclick="login()"]::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), transparent);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    button[onclick="login()"]:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 28px rgba(79, 142, 247, 0.45);
+    }
+
+    button[onclick="login()"]:hover::after {
+      opacity: 1;
+    }
+
+    button[onclick="login()"]:active {
+      transform: translateY(0);
+    }
+
+    /* Loading state */
+    button[onclick="login()"].loading {
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 28px 0 20px;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer-note span {
+      color: rgba(79, 142, 247, 0.7);
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: #1e293b;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 20px;
+      font-size: 13.5px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s;
+      opacity: 0;
+      z-index: 100;
+      white-space: nowrap;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    .toast.error {
+      border-color: rgba(248, 113, 113, 0.3);
+    }
+
+    .toast.error .toast-icon {
+      color: var(--error);
+    }
+
+    .toast.success {
+      border-color: rgba(52, 211, 153, 0.3);
+    }
+
+    .toast.success .toast-icon {
+      color: var(--success);
+    }
+
+    .toast-icon {
+      font-size: 16px;
+    }
+  </style>
 </head>
+
 <body>
 
-<h2>Placement Officer Login</h2>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
 
-<input id="email" placeholder="Email" />
-<input id="password" type="password" placeholder="Password" />
-<button onclick="login()">Login</button>
+  <div class="login-wrapper">
+    <div class="badge"><span class="badge-dot"></span>Placement Portal</div>
 
-<script>
-function login() {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+    <div class="card">
+      <div class="header">
+        <h2>Placement Officer Login</h2>
+        <p class="subtitle">Sign in to access your admin dashboard</p>
+      </div>
 
-  fetch("/api/auth/login", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      email,
-      password,
-      role: "placementOfficer"
-    })
-  })
-  .then(res => res.json())
-  .then(data => {
-    if (data.token) {
-      localStorage.setItem("token", data.token);
-      window.location.href = "/admin_dashboard/admin.html";
-    } else {
-      alert("Login failed");
+      <div class="field">
+        <label for="email">Email Address</label>
+        <div class="input-wrap">
+          <input id="email" type="email" placeholder="officer@college.edu" autocomplete="email" />
+          <span class="input-icon">✉</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <div class="input-wrap">
+          <input id="password" type="password" placeholder="Enter your password" autocomplete="current-password" />
+          <span class="input-icon">🔒</span>
+          <button class="eye-toggle" onclick="togglePassword()" type="button" id="eyeBtn"
+            title="Toggle visibility">👁</button>
+        </div>
+      </div>
+
+      <button onclick="login()">Sign In →</button>
+
+      <div class="divider"></div>
+      <p class="footer-note">Restricted access — <span>TPO & Admin only</span></p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">
+    <span class="toast-icon" id="toastIcon"></span>
+    <span id="toastMsg"></span>
+  </div>
+
+  <script>
+    // Toggle password visibility (extra feature, doesn't touch existing logic)
+    function togglePassword() {
+      const pw = document.getElementById("password");
+      const btn = document.getElementById("eyeBtn");
+      if (pw.type === "password") {
+        pw.type = "text";
+      } else {
+        pw.type = "password";
+      }
     }
-  });
-}
-</script>
+
+    function showToast(msg, type = "error") {
+      const toast = document.getElementById("toast");
+      const icon = document.getElementById("toastIcon");
+      const msgEl = document.getElementById("toastMsg");
+      toast.className = "toast " + type;
+      icon.textContent = type === "error" ? "✕" : "✓";
+      msgEl.textContent = msg;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 3500);
+    }
+
+    // ---- ORIGINAL LOGIC BELOW — UNCHANGED ----
+    function login() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      // Visual feedback while loading
+      const btn = document.querySelector('button[onclick="login()"]');
+      const originalText = btn.textContent;
+      btn.textContent = "Signing in…";
+      btn.classList.add("loading");
+
+      fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          password,
+          role: "placementOfficer"
+        })
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.token) {
+            localStorage.setItem("token", data.token);
+            showToast("Login successful! Redirecting…", "success");
+            setTimeout(() => { window.location.href = "/admin_dashboard/admin.html"; }, 800);
+          } else {
+            btn.textContent = originalText;
+            btn.classList.remove("loading");
+            alert("Login failed");
+            showToast("Invalid credentials. Please try again.", "error");
+          }
+        })
+        .catch(() => {
+          btn.textContent = originalText;
+          btn.classList.remove("loading");
+          showToast("Connection error. Check your network.", "error");
+        });
+    }
+
+    // Allow Enter key to submit
+    document.addEventListener("keydown", e => {
+      if (e.key === "Enter") login();
+    });
+  </script>
 
 </body>
+
 </html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Resume Builder</h1>
+    </header>
+
+    <form id="resumeForm">
+        <section>
+            <div class="grid-2">
+                <div>
+                    <label>Full Name</label>
+                    <input type="text" id="fullName" placeholder="John Doe" required>
+                </div>
+                <div>
+                    <label>Select Theme</label>
+                    <select id="theme">
+                        <option value="simple">Simple (Clean & Minimal)</option>
+                        <option value="modern">Modern (Bold & Colorful)</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3>Projects</h3>
+            <div class="entry-group">
+                <input type="text" id="projectTitle" placeholder="Project Title (e.g., E-commerce App)">
+                <textarea id="projectDesc" placeholder="Project Description (What did you build? What tools did you use?)" rows="3"></textarea>
+            </div>
+        </section>
+        <h3>Education</h3>
+            <div class="grid-2">
+                <input type="text" id="inEduSchool" placeholder="University Name" oninput="update()">
+                <input type="text" id="inEduYear" placeholder="Year (e.g. 2020 - 2024)" oninput="update()">
+            </div>
+            <input type="text" id="inEduDegree" placeholder="Degree (e.g. B.Tech Computer Science)" oninput="update()">
+            <textarea id="inEduDesc" placeholder="Honors, GPA, or relevant courses..." rows="2" oninput="update()"></textarea>
+
+            <h3>Projects</h3>
+            <input type="text" id="inProjTitle" placeholder="Project Title" oninput="update()">
+            <textarea id="inProjDesc" placeholder="Project description..." rows="3" oninput="update()"></textarea>
+
+            <h3>Certifications</h3>
+            <input type="text" id="inCertTitle" placeholder="Certification Title" oninput="update()">
+            <textarea id="inCertDesc" placeholder="Issuing body and details..." rows="2" oninput="update()"></textarea>
+
+            <div class="button-container">
+    <button type="button" class="btn-generate" onclick="generateResume()">
+        Generate Resume
+    </button>
+</div>
+        </form>
+    </div>
+
+
+
+</body>
+</html>

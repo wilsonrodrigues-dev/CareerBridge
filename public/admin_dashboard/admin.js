@@ -373,3 +373,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
 });
+
+document.getElementById("backtohome").addEventListener("click", () => {
+  window.location.href = "/index.html";
+});

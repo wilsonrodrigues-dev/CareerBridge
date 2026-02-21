@@ -208,3 +208,8 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
   // Redirect to login page
   window.location.href = "/student_dashboard/login.html"; 
 });
+
+document.getElementById("backtohome").addEventListener("click", function(e){
+    e.preventDefault();
+    window.location.href = "/index.html";
+});

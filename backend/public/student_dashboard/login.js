@@ -27,7 +27,7 @@ form.addEventListener("submit", async (e) => {
     if (!data.user.profileCompleted) {
       window.location.href = "/student_dashboard/complete-profile.html";
     } else {
-      window.location.href = "/student_dashboard/dashboard.html";
+      window.location.href = "/student_dashboard/student.html";
     }
 
   } else {

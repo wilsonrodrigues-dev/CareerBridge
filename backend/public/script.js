@@ -20,3 +20,11 @@ console.log("JS is running");
 
 });
 
+document.getElementById("studentBtn").addEventListener("click", () => {
+  window.location.href = "/student_dashboard/login.html";
+});
+
+document.getElementById("officerBtn").addEventListener("click", () => {
+  window.location.href = "/admin_dashboard/adminlogin.html";
+});
+

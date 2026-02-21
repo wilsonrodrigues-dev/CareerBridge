@@ -1,9 +1,8 @@
 const token = localStorage.getItem("token");
 
-const form = document.getElementById("profileForm");
+const form = document.querySelector(".btn");
 
 form.addEventListener("submit", async (e) => {
-  e.preventDefault();
 
   const cgpa = document.getElementById("cgpa").value;
   const branch = document.getElementById("branch").value;
@@ -32,7 +31,7 @@ form.addEventListener("submit", async (e) => {
     user.profileCompleted = true;
     localStorage.setItem("user", JSON.stringify(user));
 
-    window.location.href = "/student_dashboard/dashboard.html";
+    window.location.href = "/student_dashboard/student.html";
   } else {
     alert(data.message);
   }

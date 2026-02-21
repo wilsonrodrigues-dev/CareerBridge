@@ -5,9 +5,7 @@ if (!token) {
   window.location.href = "/student_dashboard/login.html";
 }
 
-if (!user || !user.profileCompleted) {
-  window.location.href = "/student_dashboard/complete-profile.html";
-}
+
 
 
 const menuBtn = document.getElementById("menuToggle");

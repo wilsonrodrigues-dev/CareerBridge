@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html class="light" lang="en">
 
 <head>
@@ -17,16 +16,12 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="student.css">
     <link rel="stylesheet" href="chatbot.css">
-
-
 </head>
-
 
 <body>
     <form id="resumeForm" style="display: none;">
         <button id="closeResumeForm">Close</button>
         <div>
-
             <label>Template</label>
             <select id="template">
                 <option value="modern">Modern</option>
@@ -43,15 +38,11 @@
             <textarea id="projectDescription" placeholder="Project Description" required></textarea>
         </div>
         <div>
-
-            
             <label>Certification</label>
             <input type="text" id="certification" placeholder="AWS Cloud Basics" />
-            
         </div>
-            <button type="submit">Generate Resume</button>
-        </form>
-
+        <button type="submit">Generate Resume</button>
+    </form>
 
     <div class="layout">
         <!-- SIDEBAR -->
@@ -79,7 +70,7 @@
                     <span class="material-symbols-outlined">description</span>
                     Application Tracker
                 </a>
-                <a class="nav-item" data-page="resumePage" >
+                <a class="nav-item" data-page="resumePage">
                     <span class="material-symbols-outlined">edit_note</span>
                     Skill Gap Analysis
                 </a>
@@ -92,7 +83,7 @@
                     Profile Settings
                 </a>
                 <a class="nav-item logout" href="#" id="logoutBtn">
-                    <span class="material-symbols-outlined " >logout</span>
+                    <span class="material-symbols-outlined ">logout</span>
                     Logout
                 </a>
             </nav>
@@ -104,7 +95,6 @@
             </div>
         </aside>
         <div id="overlay" class="overlay"></div>
-        
 
         <!-- MAIN CONTENT -->
         <main class="main">
@@ -127,7 +117,6 @@
                         <strong>80%</strong>
                     </div>
 
-
                     <div class="profile-section">
                         <div class="profile-text">
                             <p class="name username">Wilson S.</p>
@@ -139,6 +128,7 @@
                     <div class="card-buttons">
                         <button class="secondary-btn" id="edit-btn">Edit Profile</button>
                     </div>
+                </div>
             </header>
 
             <!-- DASHBOARD CONTENT -->
@@ -176,23 +166,182 @@
                             <button class="secondary-btn">Edit Profile</button>
                         </div>
                     </div>
-
-
                 </section>
-
             </div>
 
             <div id="dashboardPage" class="page active-page">
 
                 <!-- Section 2: Eligible Drives -->
                 <section class="drives-section">
-
                     <div class="section-header">
                         <h4>
                             <span class="material-symbols-outlined section-icon">campaign</span>
                             Eligible Placement Drives
                         </h4>
                         <a data-page="drivesPage" class="view-all">View All Active Drives</a>
+                    </div>
+
+                    <div class="drives-grid">
+
+                        <!-- CARD 1 -->
+                        <div class="drive-card">
+                            <div class="card-top">
+                                <div class="company-logo">
+                                    <img
+                                        src="https://thumbs.dreamstime.com/b/google-logo-vector-format-white-background-illustration-407571048.jpg">
+                                </div>
+                                <span class="badge badge-green">High Package</span>
+                            </div>
+
+                            <h5>Google</h5>
+                            <p class="role">Software Engineer (L3)</p>
+
+                            <div class="info-row">
+                                <span>Min. CGPA</span>
+                                <strong>8.0+</strong>
+                            </div>
+
+                            <div class="info-row">
+                                <span>Deadline</span>
+                                <strong class="text-red">24 Oct, 2023</strong>
+                            </div>
+
+                            <button class="primary-btn full">Apply Now</button>
+                        </div>
+
+                        <!-- CARD 2 -->
+                        <div class="drive-card">
+                            <div class="card-top">
+                                <div class="company-logo">
+                                    <img
+                                        src="https://blog.logomaster.ai/hs-fs/hubfs/adobe-logo-1.jpg?width=662&height=441&name=adobe-logo-1.jpg">
+                                </div>
+                                <span class="badge badge-blue">Applied</span>
+                            </div>
+
+                            <h5>Adobe</h5>
+                            <p class="role">Product Designer</p>
+
+                            <div class="info-row">
+                                <span>Min. CGPA</span>
+                                <strong>7.5+</strong>
+                            </div>
+
+                            <div class="info-row">
+                                <span>Deadline</span>
+                                <strong>Closed</strong>
+                            </div>
+
+                            <button class="disabled-btn full" disabled>Application Submitted</button>
+                        </div>
+
+                        <!-- CARD 3 -->
+                        <div class="drive-card">
+                            <div class="card-top">
+                                <div class="company-logo">
+                                    <img src="https://cdn.pixabay.com/photo/2012/04/10/23/33/logo-27046_1280.png">
+                                </div>
+                                <span class="badge badge-yellow">Ending Soon</span>
+                            </div>
+
+                            <h5>Microsoft</h5>
+                            <p class="role">Data Engineer</p>
+
+                            <div class="info-row">
+                                <span>Min. CGPA</span>
+                                <strong>8.5+</strong>
+                            </div>
+
+                            <div class="info-row">
+                                <span>Deadline</span>
+                                <strong class="text-red">Tomorrow</strong>
+                            </div>
+
+                            <button class="primary-btn full">Apply Now</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: Application Tracker Table -->
+                <section class="tracker-section">
+                    <div class="tracker-header">
+                        <h4>
+                            <span class="material-symbols-outlined icon-primary">track_changes</span>
+                            Application Tracker
+                        </h4>
+                        <button class="viewmore-btn" data-page="trackerPage">View more</button>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table class="tracker-table">
+                            <thead>
+                                <tr>
+                                    <th>Company</th>
+                                    <th>Role</th>
+                                    <th>Applied Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="company-cell">
+                                            <div class="company-icon">G</div>
+                                            <span class="company-name">Google</span>
+                                        </div>
+                                    </td>
+                                    <td>Software Engineer</td>
+                                    <td>Oct 12, 2023</td>
+                                    <td>
+                                        <span class="status purple">Interview Scheduled</span>
+                                    </td>
+                                    <td class="action-link">View Details</td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="company-cell">
+                                            <div class="company-icon primary">A</div>
+                                            <span class="company-name">Adobe</span>
+                                        </div>
+                                    </td>
+                                    <td>Product Designer</td>
+                                    <td>Oct 08, 2023</td>
+                                    <td>
+                                        <span class="status blue">Applied</span>
+                                    </td>
+                                    <td class="action-link">View Details</td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="company-cell">
+                                            <div class="company-icon red">O</div>
+                                            <span class="company-name">Oracle</span>
+                                        </div>
+                                    </td>
+                                    <td>Cloud Analyst</td>
+                                    <td>Sept 30, 2023</td>
+                                    <td>
+                                        <span class="status green">Selected</span>
+                                    </td>
+                                    <td class="action-link">View Offer</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+            <!-- ELIGIBLE DRIVES PAGE -->
+            <div id="drivesPage" class="page">
+                <section class="drives-section">
+                    <div class="section-header">
+                        <h4>
+                            <span class="material-symbols-outlined section-icon">campaign</span>
+                            Eligible Placement Drives
+                        </h4>
                     </div>
 
                     <div class="drives-grid">
@@ -355,173 +504,6 @@
                         </div>
                     </div>
                 </section>
-
-                <!-- Section 3: Application Tracker Table -->
-                <section class="tracker-section">
-
-                    <div class="tracker-header">
-                        <h4>
-                            <span class="material-symbols-outlined icon-primary">track_changes</span>
-                            Application Tracker
-                        </h4>
-                        <button class="viewmore-btn" data-page="trackerPage">View more</button>
-                    </div>
-
-                    <div class="table-wrapper">
-                        <table class="tracker-table">
-                            <thead>
-                                <tr>
-                                    <th>Company</th>
-                                    <th>Role</th>
-                                    <th>Applied Date</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="company-cell">
-                                            <div class="company-icon">G</div>
-                                            <span class="company-name">Google</span>
-                                        </div>
-                                    </td>
-                                    <td>Software Engineer</td>
-                                    <td>Oct 12, 2023</td>
-                                    <td>
-                                        <span class="status purple">Interview Scheduled</span>
-                                    </td>
-                                    <td class="action-link">View Details</td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <div class="company-cell">
-                                            <div class="company-icon primary">A</div>
-                                            <span class="company-name">Adobe</span>
-                                        </div>
-                                    </td>
-                                    <td>Product Designer</td>
-                                    <td>Oct 08, 2023</td>
-                                    <td>
-                                        <span class="status blue">Applied</span>
-                                    </td>
-                                    <td class="action-link">View Details</td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <div class="company-cell">
-                                            <div class="company-icon red">O</div>
-                                            <span class="company-name">Oracle</span>
-                                        </div>
-                                    </td>
-                                    <td>Cloud Analyst</td>
-                                    <td>Sept 30, 2023</td>
-                                    <td>
-                                        <span class="status green">Selected</span>
-                                    </td>
-                                    <td class="action-link">View Offer</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-            </div>
-            <!-- ELIGIBLE DRIVES PAGE -->
-            <div id="drivesPage" class="page">
-                <section class="drives-section">
-                    <div class="section-header">
-                        <h4>
-                            <span class="material-symbols-outlined section-icon">campaign</span>
-                            Eligible Placement Drives
-                        </h4>
-                    </div>
-
-                    <div class="drives-grid">
-
-                        <!-- CARD 1 -->
-                        <div class="drive-card">
-
-                            <div class="card-top">
-                                <div class="company-logo">
-                                    <img
-                                        src="https://thumbs.dreamstime.com/b/google-logo-vector-format-white-background-illustration-407571048.jpg">
-                                </div>
-                                <span class="badge badge-green">High Package</span>
-                            </div>
-
-                            <h5>Google</h5>
-                            <p class="role">Software Engineer (L3)</p>
-
-                            <div class="info-row">
-                                <span>Min. CGPA</span>
-                                <strong>8.0+</strong>
-                            </div>
-
-                            <div class="info-row">
-                                <span>Deadline</span>
-                                <strong class="text-red">24 Oct, 2023</strong>
-                            </div>
-
-                            <button class="primary-btn full">Apply Now</button>
-                        </div>
-
-                        <!-- CARD 2 -->
-                        <div class="drive-card">
-
-                            <div class="card-top">
-                                <div class="company-logo">
-                                    <img
-                                        src="https://blog.logomaster.ai/hs-fs/hubfs/adobe-logo-1.jpg?width=662&height=441&name=adobe-logo-1.jpg">
-                                </div>
-                                <span class="badge badge-blue">Applied</span>
-                            </div>
-
-                            <h5>Adobe</h5>
-                            <p class="role">Product Designer</p>
-
-                            <div class="info-row">
-                                <span>Min. CGPA</span>
-                                <strong>7.5+</strong>
-                            </div>
-
-                            <div class="info-row">
-                                <span>Deadline</span>
-                                <strong>Closed</strong>
-                            </div>
-
-                            <button class="disabled-btn full" disabled>Application Submitted</button>
-                        </div>
-
-                        <!-- CARD 3 -->
-                        <div class="drive-card">
-
-                            <div class="card-top">
-                                <div class="company-logo">
-                                    <img src="https://cdn.pixabay.com/photo/2012/04/10/23/33/logo-27046_1280.png">
-                                </div>
-                                <span class="badge badge-yellow">Ending Soon</span>
-                            </div>
-
-                            <h5>Microsoft</h5>
-                            <p class="role">Data Engineer</p>
-
-                            <div class="info-row">
-                                <span>Min. CGPA</span>
-                                <strong>8.5+</strong>
-                            </div>
-
-                            <div class="info-row">
-                                <span>Deadline</span>
-                                <strong class="text-red">Tomorrow</strong>
-                            </div>
-
-                            <button class="primary-btn full">Apply Now</button>
-                        </div>
-                    </div>
-                </section>
             </div>
 
             <!-- TRACKER PAGE -->
@@ -634,7 +616,7 @@
 
             <!-- footer -->
             <footer class="footer">
-                © 2023 PlacementPro Career Management System. All rights reserved.
+                © 2026 PlacementPro Career Management System. All rights reserved.
             </footer>
 
         </main>

@@ -34,6 +34,10 @@ document.getElementById("officerBtn").addEventListener("click", () => {
   window.location.href = "/admin_dashboard/adminlogin.html";
 });
 
+document.getElementById("alumniBtn").addEventListener("click", () => {
+  window.location.href = "/alumni/index.html";
+});
+
 // Scroll Animation Observer
 function observeElements() {
   const observerOptions = {

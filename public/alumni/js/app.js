@@ -113,9 +113,9 @@ function renderFeed(){
 
 function renderCreatePostBox(){
   return `
-    <div class="bg-white p-4 rounded-xl border shadow-sm">
+    <div class="bg-indigo-300 p-5 rounded-xl border shadow-sm">
       <textarea id="newPost"
-        class="w-full bg-gray-100 p-3 rounded-lg"
+        class="w-full bg-gray p-3 rounded-lg"
         placeholder="Share a referral..."></textarea>
 
       <div class="flex justify-end mt-3">
@@ -125,6 +125,7 @@ function renderCreatePostBox(){
         </button>
       </div>
     </div>
+    <h2 class="text-xl text-gray-500 font-semibold mt-5 flex items-center justify-center">-------ALUMNI REFERAL POSTS-------</h2>
   `;
 }
 
@@ -132,8 +133,9 @@ function renderPosts(){
 
   return alumniData.map(alumni => 
     alumni.posts.map(post => `
+      
       <div class="bg-white p-5 rounded-xl border shadow-sm">
-
+      
         <div class="flex justify-between">
           <div>
             <h4 class="font-semibold cursor-pointer text-indigo-600"

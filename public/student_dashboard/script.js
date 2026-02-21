@@ -6,8 +6,6 @@ if (!token) {
 }
 
 
-
-
 const menuBtn = document.getElementById("menuToggle");
 const closeBtn = document.getElementById("closeSidebar");
 const sidebar = document.querySelector(".sidebar");
@@ -107,3 +105,106 @@ async function loadSkillGap() {
 }
 
   loadSkillGap();
+
+let resumeform=document.getElementById("resumeForm");
+
+let resumebtn=document.getElementById("resumegenerator").addEventListener("click",function(){
+    resumeform.style.display="block";
+});
+
+document.getElementById("closeResumeForm").addEventListener("click", function(e){
+    e.preventDefault();
+    resumeform.style.display="none";
+});
+
+  document.getElementById("resumeForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const token = localStorage.getItem("token"); // or wherever you store it
+
+  if (!token) {
+    alert("Please login first");
+    return;
+  }
+
+  const resumeData = {
+    template: document.getElementById("template").value,
+    summary: document.getElementById("summary").value,
+    projects: [
+      {
+        title: document.getElementById("projectTitle").value,
+        description: document.getElementById("projectDescription").value
+      }
+    ],
+    certifications: [
+      document.getElementById("certification").value
+    ]
+  };
+
+  try {
+    const response = await fetch("/api/resume/generate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      },
+      body: JSON.stringify(resumeData)
+    });
+
+    if (!response.ok) {
+      const err = await response.json();
+      throw new Error(err.message || "Resume generation failed");
+    }
+
+    const blob = await response.blob();
+
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "Resume.pdf";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+
+    window.URL.revokeObjectURL(url);
+
+  } catch (error) {
+    console.error(error);
+    alert(error.message);
+  }
+  resumeform.style.display="none";
+});
+
+// const userString = localStorage.getItem("user");
+
+// const username = JSON.parse(userString);
+
+// const uname = username.name;
+
+// const display =document.querySelectorAll(".username")
+// display.forEach(el => el.textContent = uname);
+
+const userString = localStorage.getItem("user");
+
+if (userString) {
+  const username = JSON.parse(userString);
+  const uname = username.name;
+
+  const display = document.querySelectorAll(".username"); // ✅ dot for class
+
+  display.forEach(el => el.textContent = uname);
+}
+
+
+document.getElementById("logoutBtn").addEventListener("click", () => {
+
+  // Remove stored data
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
+
+  // Optional: clear everything
+  // localStorage.clear();
+
+  // Redirect to login page
+  window.location.href = "/student_dashboard/login.html"; 
+});

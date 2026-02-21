@@ -65,9 +65,10 @@
         transform: translateX(0);
       }
     }
-      body {
-    visibility: hidden;
-  }
+
+    body {
+      visibility: hidden;
+    }
   </style>
 </head>
 
@@ -75,8 +76,8 @@
   class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
 
   <div id="loader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
-  <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
-</div>
+    <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
 
   <div class="flex min-h-screen">
     <!-- Sidebar -->
@@ -106,7 +107,7 @@
           <span class="material-symbols-outlined">dashboard</span>
           <span>Dashboard</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white/80 hover:bg-white/10 hover:text-white font-medium transition-all"
+        <!-- <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white/80 hover:bg-white/10 hover:text-white font-medium transition-all"
           href="#">
           <span class="material-symbols-outlined">add_circle</span>
           <span>Create Drive</span>
@@ -130,12 +131,12 @@
           href="#">
           <span class="material-symbols-outlined">leaderboard</span>
           <span>Analytics</span>
-        </a>
+        </a> -->
       </nav>
       <div class="p-4 border-t border-slate-200 dark:border-slate-800">
-        <button
+        <button id="logoutBtn"
           class="flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/20 font-medium transition-all">
-          <span class="material-symbols-outlined">logout</span>
+          <span class="material-symbols-outlined" >logout</span>
           <span>Logout</span>
         </button>
       </div>
@@ -521,9 +522,9 @@
           </div>
         </div>
         <!-- Abstract pattern -->
-        <div class="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-8 -mt-8"></div>
-      </div> -->
-      </aside>
+      <div class="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-8 -mt-8"></div>
+  </div> -->
+  </aside>
   </div>
   </main>
   </div>
@@ -541,6 +542,18 @@
     openBtn.addEventListener("click", toggleSidebar);
     closeBtn.addEventListener("click", toggleSidebar);
     overlay.addEventListener("click", toggleSidebar);
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+
+      // Remove stored data
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+
+      // Optional: clear everything
+      // localStorage.clear();
+
+      // Redirect to login page
+      window.location.href = "/student_dashboard/login.html";
+    });
   </script>
   <script src="admin.js"></script>
 </body>

@@ -23,6 +23,34 @@
 
 
 <body>
+    <form id="resumeForm" style="display: none;">
+        <button id="closeResumeForm">Close</button>
+        <div>
+
+            <label>Template</label>
+            <select id="template">
+                <option value="modern">Modern</option>
+                <option value="classic">Classic</option>
+            </select>
+        </div>
+        <div>
+            <label>Professional Summary</label>
+            <textarea id="summary" required></textarea>
+        </div>
+        <div>
+            <h3>Project</h3>
+            <input type="text" id="projectTitle" placeholder="Project Title" required />
+            <textarea id="projectDescription" placeholder="Project Description" required></textarea>
+        </div>
+        <div>
+
+            
+            <label>Certification</label>
+            <input type="text" id="certification" placeholder="AWS Cloud Basics" />
+            
+        </div>
+            <button type="submit">Generate Resume</button>
+        </form>
 
 
     <div class="layout">
@@ -51,9 +79,9 @@
                     <span class="material-symbols-outlined">description</span>
                     Application Tracker
                 </a>
-                <a class="nav-item" data-page="resumePage">
+                <a class="nav-item" data-page="resumePage" >
                     <span class="material-symbols-outlined">edit_note</span>
-                    Resume Builder
+                    Skill Gap Analysis
                 </a>
 
                 <div class="account-label">Account</div>
@@ -63,8 +91,8 @@
                     <span class="material-symbols-outlined">settings</span>
                     Profile Settings
                 </a>
-                <a class="nav-item logout" href="#">
-                    <span class="material-symbols-outlined">logout</span>
+                <a class="nav-item logout" href="#" id="logoutBtn">
+                    <span class="material-symbols-outlined " >logout</span>
                     Logout
                 </a>
             </nav>
@@ -76,7 +104,7 @@
             </div>
         </aside>
         <div id="overlay" class="overlay"></div>
-
+        
 
         <!-- MAIN CONTENT -->
         <main class="main">
@@ -85,7 +113,7 @@
             <header class="top-navbar">
                 <button id="menuToggle" class="menu-toggle">☰</button>
                 <div>
-                    <h2>Welcome, Wilson 👋</h2>
+                    <h2>Welcome, <p class="username">Wilson</p>👋</h2>
                     <p>Here's what's happening today.</p>
                 </div>
 
@@ -99,21 +127,16 @@
                         <strong>80%</strong>
                     </div>
 
-                    <button class="notification-btn">
-                        <span class="material-symbols-outlined">notifications</span>
-                        <span class="notification-dot"></span>
-                    </button>
 
                     <div class="profile-section">
                         <div class="profile-text">
-                            <p class="name">Wilson S.</p>
+                            <p class="name username">Wilson S.</p>
                             <p class="roll">Roll No: 2024CS012</p>
                         </div>
                         <div class="avatar"></div>
                     </div>
 
                     <div class="card-buttons">
-                        <button class="primary-btn">Generate Resume</button>
                         <button class="secondary-btn" id="edit-btn">Edit Profile</button>
                     </div>
             </header>
@@ -127,7 +150,7 @@
                     <div class="profile-left">
                         <div class="big-avatar"></div>
                         <div>
-                            <h2>Wilson S.</h2>
+                            <h2 class="username">Wilson S.</h2>
                             <div class="profile-meta">
                                 <span>🎓 B.Tech CSE</span>
                                 <span>•</span>
@@ -149,7 +172,7 @@
                         </div>
 
                         <div class="card-buttons">
-                            <button class="primary-btn">Generate Resume</button>
+                            <button class="primary-btn" id="resumegenerator">Generate Resume</button>
                             <button class="secondary-btn">Edit Profile</button>
                         </div>
                     </div>
@@ -575,7 +598,7 @@
             </div>
 
             <!-- SKILL GAP PAGE -->
-            <div id="resumePage" class="page">
+            <!-- <div id="resumePage" class="page">
                 <section class="skill-gap-section">
                     <div class="skill-content">
 
@@ -601,7 +624,7 @@
 
                     </div>
                 </section>
-            </div>
+            </div> -->
 
             <section class="skill-gap-section">
                 <div id="skillGapContainer" class="skill-content">
@@ -656,7 +679,7 @@
     <!-- <script src="chatbot.js"></script> -->
 
     <script>
-        
+
         const chatLauncher = document.getElementById("chat-launcher");
         const chatContainer = document.getElementById("chat-container");
         const closeChat = document.getElementById("close-chat");
@@ -720,7 +743,7 @@
 
             chatBox.scrollTop = chatBox.scrollHeight;
         }
-        
+
     </script>
     <script type="module" src="script.js"></script>
 
